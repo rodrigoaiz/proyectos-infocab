@@ -1,0 +1,42 @@
+---
+type Props = {
+  total: number;
+  collections: number;
+  categories: number;
+};
+
+const { total, collections, categories } = Astro.props;
+---
+
+<section class="grid gap-8 border-b border-[color:var(--line)] pb-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-end">
+  <div class="space-y-5">
+    <p class="text-sm font-semibold uppercase tracking-[0.28em] text-[color:var(--accent-strong)]">
+      Repositorio INFOCAB
+    </p>
+    <div class="space-y-4">
+      <h1 class="max-w-4xl font-serif text-4xl leading-none text-[color:var(--ink)] sm:text-5xl lg:text-7xl">
+        Un archivo navegable de proyectos y recursos alojados en el Portal Academico.
+      </h1>
+      <p class="max-w-2xl text-balance text-base leading-7 text-[color:var(--muted)] sm:text-lg">
+        Explora materiales INFOCAB por tipo de recurso, asignatura y palabras clave. El catalogo parte del documento base en
+        <code class="rounded-full bg-[color:var(--surface-soft)] px-2 py-1 text-sm text-[color:var(--ink-soft)]">docs/repositrio-infocabs.md</code>
+        y prioriza una consulta rapida, clara y compartible.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+    <article class="border border-[color:var(--line)] bg-[color:var(--surface)] p-4">
+      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Proyectos</p>
+      <p class="mt-3 font-serif text-4xl text-[color:var(--ink)]">{total}</p>
+    </article>
+    <article class="border border-[color:var(--line)] bg-[color:var(--surface)] p-4">
+      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Colecciones</p>
+      <p class="mt-3 font-serif text-4xl text-[color:var(--ink)]">{collections}</p>
+    </article>
+    <article class="border border-[color:var(--line)] bg-[color:var(--surface)] p-4">
+      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Categorias</p>
+      <p class="mt-3 font-serif text-4xl text-[color:var(--ink)]">{categories}</p>
+    </article>
+  </div>
+</section>

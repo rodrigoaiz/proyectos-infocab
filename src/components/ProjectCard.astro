@@ -1,0 +1,49 @@
+---
+import type { Project } from '../lib/projects';
+
+type Props = {
+  project: Project;
+};
+
+const { project } = Astro.props;
+---
+
+<article
+  class="group grid h-full gap-5 border border-[color:var(--line)] bg-[color:var(--surface)] p-5 transition hover:-translate-y-1 hover:border-[color:var(--line-strong)] hover:shadow-[0_24px_60px_-32px_color-mix(in_oklab,var(--accent)_38%,black_62%)]"
+  data-project-card
+  data-title={project.title}
+  data-description={project.description}
+  data-collection={project.collection}
+  data-category={project.category}
+  data-tags={project.tags.join('|')}
+>
+  <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+    <span class="border border-[color:var(--line)] px-2 py-1">{project.collection}</span>
+    <span class="border border-[color:var(--line)] px-2 py-1">{project.category}</span>
+  </div>
+
+  <div class="space-y-3">
+    <h2 class="font-serif text-2xl leading-tight text-[color:var(--ink)] transition group-hover:text-[color:var(--accent-strong)]">
+      {project.title}
+    </h2>
+    <p class="text-sm leading-7 text-[color:var(--ink-soft)]">{project.description}</p>
+  </div>
+
+  <div class="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] pt-4">
+    <ul class="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
+      {project.tags.slice(0, 4).map((tag) => (
+        <li class="rounded-full bg-[color:var(--surface-soft)] px-2 py-1">{tag}</li>
+      ))}
+    </ul>
+
+    <a
+      class="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--accent-strong)] underline decoration-[color:color-mix(in_oklab,var(--accent)_45%,transparent)] underline-offset-4 transition hover:text-[color:var(--ink)]"
+      href={project.url}
+      target="_blank"
+      rel="noreferrer"
+    >
+      Abrir recurso
+      <span aria-hidden="true">-></span>
+    </a>
+  </div>
+</article>

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --paper: oklch(0.97 0.018 85);
+  --surface: oklch(0.95 0.016 85);
+  --surface-soft: oklch(0.92 0.018 82);
+  --ink: oklch(0.28 0.028 48);
+  --ink-soft: oklch(0.4 0.02 50);
+  --muted: oklch(0.52 0.016 55);
+  --line: oklch(0.86 0.016 80);
+  --line-strong: oklch(0.74 0.03 62);
+  --accent: oklch(0.67 0.12 55);
+  --accent-strong: oklch(0.49 0.105 50);
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, color-mix(in oklab, var(--accent) 12%, transparent) 0, transparent 28%),
+    linear-gradient(180deg, color-mix(in oklab, var(--surface-soft) 38%, white 62%) 0%, var(--paper) 30%, var(--paper) 100%);
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+a,
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 28%, white 72%);
+}
+
+[hidden] {
+  display: none !important;
+}

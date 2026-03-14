@@ -1,11 +1,141 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import EmptyState from '../components/EmptyState.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SearchFilters from '../components/SearchFilters.astro';
 import Layout from '../layouts/Layout.astro';
+import { filterProjects, getCategories, getCollections, getStats, projects } from '../lib/projects';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const query = Astro.url.searchParams.get('q') ?? '';
+const collection = Astro.url.searchParams.get('collection') ?? '';
+const category = Astro.url.searchParams.get('category') ?? '';
+
+const visibleProjects = filterProjects(projects, { query, collection, category });
+const visibleProjectIds = new Set(visibleProjects.map((project) => project.id));
+const collections = getCollections(projects);
+const categories = getCategories(projects);
+const stats = getStats(projects);
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Repositorio INFOCAB | Catalogo filtrable"
+  description="Explora proyectos INFOCAB del Portal Academico mediante busqueda, categorias y colecciones compartibles por URL."
+>
+  <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
+    <Hero total={stats.total} collections={stats.collections} categories={stats.categories} />
+
+    <SearchFilters
+      collections={collections}
+      categories={categories}
+      query={query}
+      collection={collection}
+      category={category}
+      visibleCount={visibleProjects.length}
+      totalCount={projects.length}
+    />
+
+    <section class="space-y-5">
+      <div class="flex flex-col gap-3 border-b border-[color:var(--line)] pb-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">Catalogo</p>
+          <h2 class="mt-2 font-serif text-3xl text-[color:var(--ink)] sm:text-4xl">Recursos disponibles</h2>
+        </div>
+        <p class="max-w-2xl text-sm leading-7 text-[color:var(--muted)]">
+          Cada ficha incluye una descripcion breve generada a partir del titulo y la categoria original para facilitar el recorrido inicial del repositorio.
+        </p>
+      </div>
+
+      <EmptyState hidden={visibleProjects.length !== 0} />
+
+      <div class="grid gap-4 md:grid-cols-2 2xl:grid-cols-3" data-project-grid>
+        {projects.map((project) => {
+          const isVisible = visibleProjectIds.has(project.id);
+
+          return (
+            <div hidden={!isVisible}>
+              <ProjectCard project={project} />
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    (() => {
+      const form = document.querySelector('[data-filters]');
+      const cards = Array.from(document.querySelectorAll('[data-project-grid] > div'))
+        .map((wrapper) => wrapper.querySelector('[data-project-card]'))
+        .filter((card) => card instanceof HTMLElement);
+      const label = document.querySelector('[data-results-label]');
+      const emptyState = document.querySelector('[data-empty-state]');
+      const clearButton = document.querySelector('[data-clear-filters]');
+
+      if (!(form instanceof HTMLFormElement) || !label || !emptyState) return;
+
+      const normalize = (value) =>
+        value
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .trim();
+
+      const updateUrl = (params) => {
+        const nextUrl = new URL(window.location.href);
+        Object.entries(params).forEach(([key, value]) => {
+          if (value) nextUrl.searchParams.set(key, value);
+          else nextUrl.searchParams.delete(key);
+        });
+        window.history.replaceState({}, '', nextUrl);
+      };
+
+      const render = () => {
+        const formData = new FormData(form);
+        const query = normalize(String(formData.get('q') || ''));
+        const collection = String(formData.get('collection') || '');
+        const category = String(formData.get('category') || '');
+
+        let visible = 0;
+
+        cards.forEach((card) => {
+          const matchesCollection = !collection || card.dataset.collection === collection;
+          const matchesCategory = !category || card.dataset.category === category;
+          const haystack = normalize([
+            card.dataset.title,
+            card.dataset.description,
+            card.dataset.collection,
+            card.dataset.category,
+            card.dataset.tags?.replaceAll('|', ' '),
+          ].join(' '));
+          const matchesQuery = !query || haystack.includes(query);
+          const matches = matchesCollection && matchesCategory && matchesQuery;
+          const wrapper = card.parentElement;
+
+          wrapper?.toggleAttribute('hidden', !matches);
+          if (matches) visible += 1;
+        });
+
+        label.textContent = `${visible} de ${cards.length} recursos visibles`;
+        emptyState.toggleAttribute('hidden', visible !== 0);
+        updateUrl({ q: String(formData.get('q') || ''), collection, category });
+      };
+
+      form.addEventListener('input', render);
+      form.addEventListener('change', render);
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        render();
+      });
+      form.addEventListener('reset', () => {
+        window.requestAnimationFrame(render);
+      });
+
+      clearButton?.addEventListener('click', () => {
+        window.requestAnimationFrame(() => {
+          const searchField = form.elements.namedItem('q');
+          if (searchField instanceof HTMLInputElement) searchField.focus();
+        });
+      });
+    })();
+  </script>
 </Layout>

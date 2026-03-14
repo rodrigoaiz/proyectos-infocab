@@ -1,0 +1,14 @@
+---
+type Props = {
+  hidden?: boolean;
+};
+
+const { hidden = true } = Astro.props;
+---
+
+<div class="border border-dashed border-[color:var(--line-strong)] bg-[color:var(--surface)] px-6 py-12 text-center" data-empty-state hidden={hidden}>
+  <p class="font-serif text-3xl text-[color:var(--ink)]">No hay coincidencias con esos filtros.</p>
+  <p class="mx-auto mt-3 max-w-xl text-sm leading-7 text-[color:var(--muted)]">
+    Prueba con otra palabra clave o limpia la combinacion actual para volver a ver el catalogo completo.
+  </p>
+</div>
