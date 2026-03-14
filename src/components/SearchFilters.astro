@@ -26,16 +26,22 @@ const { collections, categories, query, collection, category, visibleCount, tota
   </summary>
 
   <div class="filters-body p-4 pt-5 sm:p-5">
-    <div class="mb-4 flex flex-col gap-2 border-b border-[color:var(--line)] pb-4 md:flex-row md:items-end md:justify-between">
+    <div class="mb-4 flex flex-col gap-3 border-b border-[color:var(--line)] pb-4 md:flex-row md:items-start md:justify-between">
       <div class="space-y-1">
         <h2 class="text-xl text-[color:var(--ink)] sm:text-2xl">Busca y afina el catalogo</h2>
         <p class="max-w-2xl text-sm leading-6 text-[color:var(--muted)]">
           Escribe un tema, una asignatura o una palabra clave. Los resultados se actualizan mientras exploras.
         </p>
       </div>
-      <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[color:var(--accent-strong)] md:text-xs">
-        Filtros en vivo
-      </p>
+      <div class="flex items-center gap-2 self-start md:justify-end">
+        <p
+          class="inline-flex items-center rounded-full border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(90deg,var(--portal-plum-soft),color-mix(in_oklab,var(--portal-orange)_10%,white_90%))] px-3 py-2 text-sm font-medium text-[color:var(--ink)] shadow-[0_16px_40px_-28px_color-mix(in_oklab,var(--portal-plum)_45%,black_55%)] transition-transform duration-200 md:hover:-translate-y-0.5"
+          aria-live="polite"
+          data-results-label
+        >
+          {visibleCount} de {totalCount} recursos visibles
+        </p>
+      </div>
     </div>
 
     <form class="grid gap-3 sm:gap-4 xl:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.58fr))_auto] xl:items-end" data-filters>
@@ -85,16 +91,6 @@ const { collections, categories, query, collection, category, visibleCount, tota
         Borrar filtros
       </button>
     </form>
-
-    <div class="mt-4 flex flex-col gap-3 border-t border-[color:var(--line)] pt-4 sm:flex-row sm:items-center sm:justify-between">
-      <p class="text-sm text-[color:var(--muted)]" aria-live="polite" data-results-label>
-        {visibleCount} de {totalCount} recursos visibles
-      </p>
-      <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.16em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
-        <span class="border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[color:var(--portal-plum-soft)] px-2 py-1">Comparte la URL</span>
-        <span class="border border-[color:color-mix(in_oklab,var(--portal-teal)_35%,var(--line))] bg-[color:var(--portal-teal-soft)] px-2 py-1">Cruza filtros</span>
-      </div>
-    </div>
   </div>
 </details>
 
