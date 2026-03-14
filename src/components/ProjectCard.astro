@@ -10,7 +10,7 @@ const tone = getCollectionTone(project.collection);
 ---
 
 <article
-  class="group relative grid h-full gap-5 overflow-hidden border border-[color:var(--card-border)] bg-[linear-gradient(180deg,var(--card-surface),color-mix(in_oklab,var(--surface)_88%,white_12%))] p-5 transition duration-200 hover:-translate-y-1 hover:border-[color:var(--card-accent)] hover:shadow-[0_24px_60px_-36px_color-mix(in_oklab,var(--card-accent)_34%,black_66%)]"
+  class="group relative grid h-full gap-4 overflow-hidden border border-[color:var(--card-border)] bg-[linear-gradient(180deg,var(--card-surface),color-mix(in_oklab,var(--surface)_88%,white_12%))] p-4 transition duration-200 hover:-translate-y-1 hover:border-[color:var(--card-accent)] hover:shadow-[0_24px_60px_-36px_color-mix(in_oklab,var(--card-accent)_34%,black_66%)] sm:gap-5 sm:p-5"
   data-project-card
   data-title={project.title}
   data-description={project.description}
@@ -26,10 +26,10 @@ const tone = getCollectionTone(project.collection);
   </div>
 
   <div class="space-y-3">
-    <h2 class="font-serif text-2xl leading-tight text-[color:var(--ink)] transition group-hover:text-[color:var(--card-accent)]">
+    <h2 class="font-serif text-[1.55rem] leading-tight text-[color:var(--ink)] transition group-hover:text-[color:var(--card-accent)] sm:text-2xl">
       {project.title}
     </h2>
-    <p class="max-w-[60ch] text-sm leading-7 text-[color:var(--ink-soft)]">{project.description}</p>
+    <p class="max-w-[60ch] text-sm leading-6 text-[color:var(--ink-soft)] sm:leading-7">{project.description}</p>
   </div>
 
   <div class="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] pt-4">

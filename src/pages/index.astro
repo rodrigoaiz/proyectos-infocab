@@ -21,7 +21,7 @@ const stats = getStats(projects);
   title="Repositorio INFOCAB | Catalogo filtrable"
   description="Explora proyectos INFOCAB del Portal Academico mediante busqueda, categorias y colecciones compartibles por URL."
 >
-  <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
+  <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-6 px-4 py-5 sm:gap-8 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
     <Hero total={stats.total} collections={stats.collections} categories={stats.categories} />
 
     <SearchFilters
@@ -34,7 +34,7 @@ const stats = getStats(projects);
       totalCount={projects.length}
     />
 
-    <section class="space-y-5">
+    <section class="space-y-4 sm:space-y-5">
       <div class="flex flex-col gap-3 border-b border-[color:var(--line)] pb-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--muted)]">Catalogo</p>

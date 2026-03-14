@@ -81,6 +81,30 @@ button {
   display: none !important;
 }
 
+.filters-panel > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .filters-panel:not([open]) .filters-body {
+    display: none;
+  }
+
+  .filters-panel[open] summary {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .filters-panel[open] summary span {
+    background: var(--portal-orange-soft);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filters-panel > summary {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
