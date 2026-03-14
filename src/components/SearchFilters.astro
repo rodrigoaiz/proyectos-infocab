@@ -12,16 +12,29 @@ type Props = {
 const { collections, categories, query, collection, category, visibleCount, totalCount } = Astro.props;
 ---
 
-<section class="sticky top-4 z-10 border border-[color:var(--line-strong)] bg-[color:color-mix(in oklab, var(--surface) 92%, white 8%)] p-4 backdrop-blur sm:p-5">
-  <form class="grid gap-4 xl:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.55fr))_auto_auto] xl:items-end" data-filters>
+<section class="sticky top-4 z-10 overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] p-4 shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] backdrop-blur sm:p-5">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--portal-plum),var(--portal-orange),var(--portal-lime),var(--portal-teal))]"></div>
+  <div class="mb-4 flex flex-col gap-2 border-b border-[color:var(--line)] pb-4 md:flex-row md:items-end md:justify-between">
+    <div class="space-y-1">
+      <h2 class="text-2xl text-[color:var(--ink)]">Busca y afina el catalogo</h2>
+      <p class="max-w-2xl text-sm leading-6 text-[color:var(--muted)]">
+        Escribe un tema, una asignatura o una palabra clave. Los resultados se actualizan mientras exploras.
+      </p>
+    </div>
+    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--accent-strong)]">
+      Filtros en vivo
+    </p>
+  </div>
+
+  <form class="grid gap-4 xl:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.58fr))_auto] xl:items-end" data-filters>
     <label class="grid gap-2">
       <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Buscar</span>
       <input
-        class="min-h-12 border border-[color:var(--line)] bg-[color:var(--paper)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:color-mix(in oklab, var(--accent) 26%, white 74%)]"
+        class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-plum)_25%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-plum)_3%,white_97%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-plum)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-plum)_22%,white_78%)]"
         type="search"
         name="q"
         value={query}
-        placeholder="Titulo, descripcion o palabra clave"
+        placeholder="Ej. biologia, trigonometria, ingles 3"
         autocomplete="off"
       />
     </label>
@@ -29,7 +42,7 @@ const { collections, categories, query, collection, category, visibleCount, tota
     <label class="grid gap-2">
       <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Coleccion</span>
       <select
-        class="min-h-12 border border-[color:var(--line)] bg-[color:var(--paper)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:color-mix(in oklab, var(--accent) 26%, white 74%)]"
+        class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-orange)_26%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-orange)_4%,white_96%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-orange)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-orange)_24%,white_76%)]"
         name="collection"
       >
         <option value="">Todas</option>
@@ -42,7 +55,7 @@ const { collections, categories, query, collection, category, visibleCount, tota
     <label class="grid gap-2">
       <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Categoria</span>
       <select
-        class="min-h-12 border border-[color:var(--line)] bg-[color:var(--paper)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--accent)] focus:ring-2 focus:ring-[color:color-mix(in oklab, var(--accent) 26%, white 74%)]"
+        class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-teal)_28%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-teal)_4%,white_96%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-teal)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-teal)_22%,white_78%)]"
         name="category"
       >
         <option value="">Todas</option>
@@ -53,18 +66,11 @@ const { collections, categories, query, collection, category, visibleCount, tota
     </label>
 
     <button
-      class="min-h-12 bg-[color:var(--accent-strong)] px-5 font-medium text-[color:var(--paper)] transition hover:bg-[color:var(--ink)] focus:outline-none focus:ring-2 focus:ring-[color:color-mix(in oklab, var(--accent) 38%, white 62%)]"
-      type="submit"
-    >
-      Aplicar
-    </button>
-
-    <button
-      class="min-h-12 border border-[color:var(--line-strong)] px-4 font-medium text-[color:var(--ink)] transition hover:border-[color:var(--accent-strong)] hover:text-[color:var(--accent-strong)] focus:border-[color:var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color:color-mix(in oklab, var(--accent) 26%, white 74%)]"
+      class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-lime)_40%,var(--line-strong))] bg-[color:color-mix(in_oklab,var(--portal-lime)_6%,white_94%)] px-4 font-medium text-[color:var(--ink)] transition hover:border-[color:var(--portal-lime)] hover:text-[color:var(--portal-plum)] focus:border-[color:var(--portal-lime)] focus:outline-none focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-lime)_24%,white_76%)]"
       type="reset"
       data-clear-filters
     >
-      Limpiar filtros
+      Borrar filtros
     </button>
   </form>
 
@@ -73,8 +79,8 @@ const { collections, categories, query, collection, category, visibleCount, tota
       {visibleCount} de {totalCount} recursos visibles
     </p>
     <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
-      <span class="border border-[color:var(--line)] px-2 py-1">Busqueda compartible por URL</span>
-      <span class="border border-[color:var(--line)] px-2 py-1">Filtrado por coleccion y categoria</span>
+      <span class="border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[color:var(--portal-plum-soft)] px-2 py-1">Comparte la URL</span>
+      <span class="border border-[color:color-mix(in_oklab,var(--portal-teal)_35%,var(--line))] bg-[color:var(--portal-teal-soft)] px-2 py-1">Cruza coleccion y categoria</span>
     </div>
   </div>
 </section>

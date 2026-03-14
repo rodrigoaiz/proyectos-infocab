@@ -53,5 +53,30 @@ export const getStats = (source: Project[]) => ({
   categories: getCategories(source).length,
 });
 
+export const getCollectionTone = (collection: string) => {
+  switch (collection) {
+    case 'Recursos de apoyo':
+      return {
+        accent: 'var(--portal-orange)',
+        soft: 'var(--portal-orange-soft)',
+      };
+    case 'Objetos de aprendizaje':
+      return {
+        accent: 'var(--portal-teal)',
+        soft: 'var(--portal-teal-soft)',
+      };
+    case 'Publicaciones':
+      return {
+        accent: 'var(--portal-lime)',
+        soft: 'var(--portal-lime-soft)',
+      };
+    default:
+      return {
+        accent: 'var(--portal-plum)',
+        soft: 'var(--portal-plum-soft)',
+      };
+  }
+};
+
 export { projects };
 export type { Project };

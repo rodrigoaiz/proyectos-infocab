@@ -2,22 +2,31 @@
 @import "tailwindcss";
 
 :root {
-  --paper: oklch(0.97 0.018 85);
-  --surface: oklch(0.95 0.016 85);
-  --surface-soft: oklch(0.92 0.018 82);
-  --ink: oklch(0.28 0.028 48);
-  --ink-soft: oklch(0.4 0.02 50);
-  --muted: oklch(0.52 0.016 55);
-  --line: oklch(0.86 0.016 80);
-  --line-strong: oklch(0.74 0.03 62);
-  --accent: oklch(0.67 0.12 55);
-  --accent-strong: oklch(0.49 0.105 50);
+  --portal-plum: #6e3f6a;
+  --portal-orange: #eb844c;
+  --portal-lime: #bbc447;
+  --portal-teal: #3fb8b3;
+  --portal-plum-soft: color-mix(in oklab, var(--portal-plum) 8%, white 92%);
+  --portal-orange-soft: color-mix(in oklab, var(--portal-orange) 10%, white 90%);
+  --portal-lime-soft: color-mix(in oklab, var(--portal-lime) 12%, white 88%);
+  --portal-teal-soft: color-mix(in oklab, var(--portal-teal) 10%, white 90%);
+  --paper: oklch(0.978 0.018 18);
+  --surface: color-mix(in oklab, var(--portal-plum) 4%, white 96%);
+  --surface-soft: color-mix(in oklab, var(--portal-orange) 6%, white 94%);
+  --ink: oklch(0.28 0.035 338);
+  --ink-soft: oklch(0.4 0.028 338);
+  --muted: oklch(0.53 0.02 338);
+  --line: color-mix(in oklab, var(--portal-plum) 14%, white 86%);
+  --line-strong: color-mix(in oklab, var(--portal-plum) 30%, white 70%);
+  --accent: var(--portal-orange);
+  --accent-strong: var(--portal-plum);
 }
 
 html {
   background:
-    radial-gradient(circle at top left, color-mix(in oklab, var(--accent) 12%, transparent) 0, transparent 28%),
-    linear-gradient(180deg, color-mix(in oklab, var(--surface-soft) 38%, white 62%) 0%, var(--paper) 30%, var(--paper) 100%);
+    radial-gradient(circle at top left, color-mix(in oklab, var(--portal-plum) 10%, transparent) 0, transparent 30%),
+    radial-gradient(circle at top right, color-mix(in oklab, var(--portal-teal) 8%, transparent) 0, transparent 26%),
+    linear-gradient(180deg, color-mix(in oklab, var(--portal-orange) 5%, white 95%) 0%, var(--paper) 22%, color-mix(in oklab, var(--portal-lime) 2.5%, white 97.5%) 100%);
   color: var(--ink);
   font-family: 'Manrope', sans-serif;
   scroll-behavior: smooth;
@@ -44,10 +53,44 @@ select {
   font: inherit;
 }
 
+a,
+button,
+input,
+select,
+article {
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+input,
+select,
+button {
+  min-height: 3rem;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--portal-teal) 60%, white 40%);
+  outline-offset: 3px;
+}
+
 ::selection {
-  background: color-mix(in oklab, var(--accent) 28%, white 72%);
+  background: color-mix(in oklab, var(--portal-orange) 30%, white 70%);
 }
 
 [hidden] {
   display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
