@@ -32,13 +32,7 @@ const tone = getCollectionTone(project.collection);
     <p class="max-w-[60ch] text-sm leading-6 text-[color:var(--ink-soft)] sm:leading-7">{project.description}</p>
   </div>
 
-  <div class="mt-auto flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] pt-4">
-    <ul class="flex flex-wrap gap-2 text-xs text-[color:var(--muted)]">
-      {project.tags.slice(0, 4).map((tag) => (
-        <li class="rounded-full border border-[color:color-mix(in_oklab,var(--card-accent)_14%,white_86%)] bg-[color:color-mix(in_oklab,var(--card-surface)_78%,white_22%)] px-2 py-1">{tag}</li>
-      ))}
-    </ul>
-
+  <div class="mt-auto flex items-center justify-end border-t border-[color:var(--line)] pt-4">
     <a
       class="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--card-accent)] underline decoration-[color:color-mix(in_oklab,var(--card-accent)_45%,transparent)] underline-offset-4 transition hover:text-[color:var(--ink)]"
       href={project.url}

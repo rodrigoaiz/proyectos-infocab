@@ -12,7 +12,7 @@ type Props = {
 const { collections, categories, query, collection, category, visibleCount, totalCount } = Astro.props;
 ---
 
-<details class="filters-panel relative overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] lg:sticky lg:top-4 lg:z-10 lg:backdrop-blur" data-filters-panel>
+<details class="filters-panel relative overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] lg:sticky lg:top-4 lg:z-10 lg:backdrop-blur" data-filters-panel open>
   <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--portal-plum),var(--portal-orange),var(--portal-lime),var(--portal-teal))]"></div>
 
   <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:hidden sm:px-5 lg:hidden">
@@ -97,3 +97,22 @@ const { collections, categories, query, collection, category, visibleCount, tota
     </div>
   </div>
 </details>
+
+<script is:inline>
+  (() => {
+    const panel = document.querySelector('[data-filters-panel]');
+    if (!(panel instanceof HTMLDetailsElement)) return;
+
+    const syncPanel = () => {
+      if (window.innerWidth >= 1024) {
+        panel.open = true;
+      } else if (!panel.dataset.mobileReady) {
+        panel.open = false;
+        panel.dataset.mobileReady = 'true';
+      }
+    };
+
+    syncPanel();
+    window.addEventListener('resize', syncPanel, { passive: true });
+  })();
+</script>

@@ -103,6 +103,10 @@ button {
   .filters-panel > summary {
     display: none;
   }
+
+  .filters-panel .filters-body {
+    display: block !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
