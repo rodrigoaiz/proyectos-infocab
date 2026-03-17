@@ -12,43 +12,37 @@ type Props = {
 const { collections, categories, query, collection, category, visibleCount, totalCount } = Astro.props;
 ---
 
-<details class="filters-panel relative overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] lg:sticky lg:top-4 lg:z-10 lg:backdrop-blur" data-filters-panel open>
+<details class="filters-panel relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] backdrop-blur" data-filters-panel open>
   <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--portal-plum),var(--portal-orange),var(--portal-lime),var(--portal-teal))]"></div>
 
-  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:hidden sm:px-5 lg:hidden">
-    <div>
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--accent-strong)]">Filtros</p>
-      <p class="mt-1 text-sm text-[color:var(--muted)]">{visibleCount} de {totalCount} recursos visibles</p>
+  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 marker:hidden sm:px-5 transition-colors hover:bg-white/40">
+    <div class="flex items-center gap-3 sm:gap-4">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-(--accent-strong)">Filtros</p>
+      <p class="text-sm text-(--muted)">{visibleCount} de {totalCount} recursos</p>
     </div>
-    <span class="inline-flex min-h-11 items-center border border-[color:var(--line)] bg-[color:var(--portal-plum-soft)] px-3 text-sm font-medium text-[color:var(--ink)]">
-      Abrir
+    <span class="inline-flex items-center gap-2 text-sm font-medium text-(--ink)">
+      <span class="hidden sm:inline">Buscar</span>
+      <svg class="h-5 w-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
     </span>
   </summary>
 
-  <div class="filters-body p-4 pt-5 sm:p-5">
-    <div class="mb-4 flex flex-col gap-3 border-b border-[color:var(--line)] pb-4 md:flex-row md:items-start md:justify-between">
+  <div class="filters-body p-4 pt-3 sm:p-5 sm:pt-4">
+    <div class="mb-4 flex flex-col gap-3 border-b border-(--line) pb-4 md:flex-row md:items-start md:justify-between">
       <div class="space-y-1">
-        <h2 class="text-xl text-[color:var(--ink)] sm:text-2xl">Busca y afina el catalogo</h2>
-        <p class="max-w-2xl text-sm leading-6 text-[color:var(--muted)]">
+        <h2 class="text-xl text-(--ink) sm:text-2xl">Herramienta de búsqueda</h2>
+        <p class="max-w-2xl text-sm leading-6 text-(--muted)">
           Escribe un tema, una asignatura o una palabra clave. Los resultados se actualizan mientras exploras.
-        </p>
-      </div>
-      <div class="flex items-center gap-2 self-start md:justify-end">
-        <p
-          class="inline-flex items-center rounded-full border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(90deg,var(--portal-plum-soft),color-mix(in_oklab,var(--portal-orange)_10%,white_90%))] px-3 py-2 text-sm font-medium text-[color:var(--ink)] shadow-[0_16px_40px_-28px_color-mix(in_oklab,var(--portal-plum)_45%,black_55%)] transition-transform duration-200 md:hover:-translate-y-0.5"
-          aria-live="polite"
-          data-results-label
-        >
-          {visibleCount} de {totalCount} recursos visibles
         </p>
       </div>
     </div>
 
-    <form class="grid gap-3 sm:gap-4 xl:grid-cols-[minmax(0,1.2fr)_repeat(2,minmax(0,0.58fr))_auto] xl:items-end" data-filters>
-      <label class="grid gap-2">
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Buscar</span>
+    <form class="grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_auto] xl:gap-6 xl:items-end" data-filters>
+      <label class="grid gap-2 md:col-span-2 xl:col-span-1">
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">Buscar</span>
         <input
-          class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-plum)_25%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-plum)_3%,white_97%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-plum)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-plum)_22%,white_78%)]"
+          class="min-h-12 border border-[color-mix(in_oklab,var(--portal-plum)_25%,var(--line))] bg-[color-mix(in_oklab,var(--portal-plum)_3%,white_97%)] px-4 text-base text-(--ink) outline-none transition focus:border-(--portal-plum) focus:ring-2 focus:ring-[color-mix(in_oklab,var(--portal-plum)_22%,white_78%)]"
           type="search"
           name="q"
           value={query}
@@ -58,9 +52,9 @@ const { collections, categories, query, collection, category, visibleCount, tota
       </label>
 
       <label class="grid gap-2">
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Coleccion</span>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">Coleccion</span>
         <select
-          class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-orange)_26%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-orange)_4%,white_96%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-orange)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-orange)_24%,white_76%)]"
+          class="min-h-12 border border-[color-mix(in_oklab,var(--portal-orange)_26%,var(--line))] bg-[color-mix(in_oklab,var(--portal-orange)_4%,white_96%)] px-4 text-base text-(--ink) outline-none transition focus:border-(--portal-orange) focus:ring-2 focus:ring-[color-mix(in_oklab,var(--portal-orange)_24%,white_76%)]"
           name="collection"
         >
           <option value="">Todas</option>
@@ -71,9 +65,9 @@ const { collections, categories, query, collection, category, visibleCount, tota
       </label>
 
       <label class="grid gap-2">
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">Categoria</span>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">Categoria</span>
         <select
-          class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-teal)_28%,var(--line))] bg-[color:color-mix(in_oklab,var(--portal-teal)_4%,white_96%)] px-4 text-base text-[color:var(--ink)] outline-none transition focus:border-[color:var(--portal-teal)] focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-teal)_22%,white_78%)]"
+          class="min-h-12 border border-[color-mix(in_oklab,var(--portal-teal)_28%,var(--line))] bg-[color-mix(in_oklab,var(--portal-teal)_4%,white_96%)] px-4 text-base text-(--ink) outline-none transition focus:border-(--portal-teal) focus:ring-2 focus:ring-[color-mix(in_oklab,var(--portal-teal)_22%,white_78%)]"
           name="category"
         >
           <option value="">Todas</option>
@@ -84,7 +78,7 @@ const { collections, categories, query, collection, category, visibleCount, tota
       </label>
 
       <button
-        class="min-h-12 border border-[color:color-mix(in_oklab,var(--portal-lime)_40%,var(--line-strong))] bg-[color:color-mix(in_oklab,var(--portal-lime)_6%,white_94%)] px-4 font-medium text-[color:var(--ink)] transition hover:border-[color:var(--portal-lime)] hover:text-[color:var(--portal-plum)] focus:border-[color:var(--portal-lime)] focus:outline-none focus:ring-2 focus:ring-[color:color-mix(in_oklab,var(--portal-lime)_24%,white_76%)] xl:self-end"
+        class="min-h-12 min-w-35 border border-[color-mix(in_oklab,var(--portal-lime)_40%,var(--line-strong))] bg-[color-mix(in_oklab,var(--portal-lime)_6%,white_94%)] px-5 font-medium text-(--ink) transition hover:border-(--portal-lime) hover:text-(--portal-plum) focus:border-(--portal-lime) focus:outline-none focus:ring-2 focus:ring-[color-mix(in_oklab,var(--portal-lime)_24%,white_76%)] md:col-span-2 xl:col-span-1 xl:w-auto xl:self-end"
         type="reset"
         data-clear-filters
       >
@@ -99,16 +93,37 @@ const { collections, categories, query, collection, category, visibleCount, tota
     const panel = document.querySelector('[data-filters-panel]');
     if (!(panel instanceof HTMLDetailsElement)) return;
 
-    const syncPanel = () => {
-      if (window.innerWidth >= 1024) {
-        panel.open = true;
-      } else if (!panel.dataset.mobileReady) {
-        panel.open = false;
-        panel.dataset.mobileReady = 'true';
+    // Animar el chevron cuando se abre/cierra
+    const summary = panel.querySelector('summary');
+    const chevron = summary?.querySelector('svg');
+    
+    panel.addEventListener('toggle', () => {
+      if (chevron) {
+        chevron.style.transform = panel.open ? 'rotate(180deg)' : 'rotate(0deg)';
       }
-    };
+    });
 
-    syncPanel();
-    window.addEventListener('resize', syncPanel, { passive: true });
+    // Auto-cerrar después de aplicar filtros (cuando cambian los inputs)
+    const form = panel.querySelector('[data-filters]');
+    if (form) {
+      const inputs = form.querySelectorAll('input, select');
+      
+      inputs.forEach(input => {
+        input.addEventListener('change', () => {
+          // Esperar un poco antes de cerrar para que se vea el cambio
+          setTimeout(() => {
+            if (window.innerWidth >= 1024) {
+              panel.open = false;
+            }
+          }, 300);
+        });
+      });
+    }
   })();
 </script>
+
+<style>
+  details[data-filters-panel][open] summary svg {
+    transform: rotate(180deg);
+  }
+</style>

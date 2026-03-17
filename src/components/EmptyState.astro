@@ -6,9 +6,9 @@ type Props = {
 const { hidden = true } = Astro.props;
 ---
 
-<div class="border border-dashed border-[color:var(--line-strong)] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_6%,white_94%),var(--surface))] px-6 py-12 text-center" data-empty-state hidden={hidden}>
-  <p class="font-serif text-3xl text-[color:var(--ink)]">No encontramos recursos con esa combinacion.</p>
-  <p class="mx-auto mt-3 max-w-xl text-sm leading-7 text-[color:var(--muted)]">
-    Cambia la palabra clave, prueba otra categoria o usa el boton para borrar filtros y volver al catalogo completo.
+<div class="border border-dashed border-(--line-strong) bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_6%,white_94%),var(--surface))] px-6 py-12 text-center" data-empty-state hidden={hidden}>
+  <p class="font-serif text-3xl text-(--ink)">No encontramos recursos con esa combinacion.</p>
+  <p class="mx-auto mt-3 max-w-xl text-sm leading-7 text-(--muted)">
+    Cambia la palabra clave, prueba otra categoria o usa el boton para borrar filtros y volver al catálogo completo.
   </p>
 </div>

@@ -8,39 +8,38 @@ type Props = {
 const { total, collections, categories } = Astro.props;
 ---
 
-<section class="relative grid gap-8 overflow-hidden border-b border-[color:var(--line)] pb-10 sm:gap-10 sm:pb-12 lg:grid-cols-[1.35fr_0.85fr] lg:items-end">
-  <div class="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[linear-gradient(90deg,color-mix(in_oklab,var(--portal-plum)_18%,transparent),color-mix(in_oklab,var(--portal-orange)_12%,transparent),color-mix(in_oklab,var(--portal-teal)_10%,transparent))] blur-3xl"></div>
+<section class="relative grid gap-8 overflow-hidden border-b border-(--line) pb-10 sm:gap-10 sm:pb-12 lg:grid-cols-[1.35fr_0.85fr] lg:items-end">
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-56"></div>
   <div class="space-y-5 sm:space-y-6">
-    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--accent-strong)] sm:text-sm sm:tracking-[0.28em]">
-      Repositorio INFOCAB
+    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-(--accent-strong) sm:text-sm sm:tracking-[0.28em]">
+      Repositorio de recursos educativos
     </p>
     <div class="space-y-4">
-      <h1 class="max-w-4xl text-balance font-serif text-[2.35rem] leading-[0.95] text-[color:var(--ink)] sm:text-5xl lg:text-[5.4rem]">
-        Encuentra proyectos y recursos INFOCAB
+      <h1 class="max-w-4xl text-balance font-serif text-[2.35rem] leading-[1.15] text-(--ink) sm:text-5xl lg:text-[5.4rem]">
+        Catálogo INFOCAB
       </h1>
-      <p class="max-w-2xl text-balance text-[0.95rem] leading-7 text-[color:var(--muted)] sm:text-lg">
+      <p class="max-w-2xl text-balance text-[0.95rem] leading-7 text-(--muted) sm:text-lg">
         Recorre el acervo por tipo de recurso, asignatura o palabra clave. 
       </p>
     </div>
-    <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--ink-soft)]">
-      <span class="border border-[color:color-mix(in_oklab,var(--portal-plum)_35%,white_65%)] bg-[color:var(--portal-plum-soft)] px-3 py-1">Portal Academico</span>
-      <span class="border border-[color:color-mix(in_oklab,var(--portal-orange)_40%,white_60%)] bg-[color:var(--portal-orange-soft)] px-3 py-1">Busqueda viva</span>
-      <span class="border border-[color:color-mix(in_oklab,var(--portal-teal)_35%,white_65%)] bg-[color:var(--portal-teal-soft)] px-3 py-1">Catalogo filtrable</span>
+    <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--ink-soft)">
+      <span class="border border-[color-mix(in_oklab,var(--portal-plum)_35%,white_65%)] bg-(--portal-plum-soft) px-3 py-1">Alojados en el Portal Academico</span>
+      <span class="border border-[color-mix(in_oklab,var(--portal-teal)_35%,white_65%)] bg-(--portal-teal-soft) px-3 py-1">Catálogo filtrable</span>
     </div>
   </div>
 
   <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-    <article class="relative overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-plum)_22%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-plum)_9%,white_91%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[color:var(--portal-plum)] before:content-['']">
-      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Proyectos</p>
-      <p class="mt-3 font-serif text-3xl text-[color:var(--ink)] sm:text-4xl">{total}</p>
+    <article class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_22%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-plum)_9%,white_91%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-plum) before:content-['']">
+      <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Proyectos</p>
+      <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{total}</p>
     </article>
-    <article class="relative overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-orange)_28%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[color:var(--portal-orange)] before:content-['']">
-      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Colecciones</p>
-      <p class="mt-3 font-serif text-3xl text-[color:var(--ink)] sm:text-4xl">{collections}</p>
+    <article class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-orange)_28%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-orange) before:content-['']">
+      <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Colecciones</p>
+      <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{collections}</p>
     </article>
-    <article class="relative col-span-2 overflow-hidden border border-[color:color-mix(in_oklab,var(--portal-teal)_24%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-teal)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[color:var(--portal-teal)] before:content-[''] sm:col-span-1">
-      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted)]">Categorias</p>
-      <p class="mt-3 font-serif text-3xl text-[color:var(--ink)] sm:text-4xl">{categories}</p>
+    <article class="relative col-span-2 overflow-hidden border border-[color-mix(in_oklab,var(--portal-teal)_24%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-teal)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-teal) before:content-[''] sm:col-span-1">
+      <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Categorias</p>
+      <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{categories}</p>
     </article>
   </div>
 </section>

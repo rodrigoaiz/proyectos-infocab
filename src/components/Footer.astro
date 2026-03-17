@@ -1,0 +1,62 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-[#3d2838]" style="background-color: #4f344b;">
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+    <div class="grid gap-8 md:grid-cols-2">
+      <!-- Logos -->
+      <div class="space-y-4">
+        <div class="flex flex-wrap items-center gap-6">
+          <a 
+            href="https://portalacademico.cch.unam.mx/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Portal Académico CCH"
+            class="transition-opacity hover:opacity-75"
+          >
+            <img src="/logotipo-pacch-bn-2024.svg" alt="Portal Académico CCH" class="h-12 w-auto brightness-0 invert" />
+          </a>
+          <a 
+            href="https://www.unam.mx/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="UNAM"
+            class="transition-opacity hover:opacity-75"
+          >
+            <img src="/logo-unam.svg" alt="UNAM" class="h-10 w-auto brightness-0 invert" />
+          </a>
+          <a 
+            href="https://cch.unam.mx/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="CCH"
+            class="transition-opacity hover:opacity-75"
+          >
+            <img src="/logo-cch.svg" alt="CCH" class="h-10 w-auto brightness-0 invert" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Sobre INFOCAB -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-white/60">Sobre INFOCAB</h3>
+        <p class="text-sm leading-relaxed text-white/70">
+          Los proyectos INFOCAB son parte de la iniciativa de innovación y apoyo a la docencia del Colegio de Ciencias y Humanidades de la UNAM.
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 border-t border-white/10 pt-8">
+      <div class="flex flex-col items-center justify-center gap-2 text-center text-sm text-white/60">
+        <p>
+          Escuela Nacional Colegio de Ciencias y Humanidades | Hecho en México | © {currentYear} UNAM
+        </p>
+        <p class="max-w-3xl text-xs text-white/50">
+           Esta página electrónica puede ser reproducida, sin objeto comercial, siempre y cuando su contenido no se mutile o altere, se cite la fuente completa y la dirección Web de conformidad con el artículo 148 de la Ley Federal del Derecho de Autor, de otra forma, se requerirá permiso previo y por escrito de la UNAM.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
