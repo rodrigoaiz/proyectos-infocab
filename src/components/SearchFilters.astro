@@ -12,23 +12,17 @@ type Props = {
 const { areas, categories, query, area, category, visibleCount, totalCount } = Astro.props;
 ---
 
-<details class="filters-panel relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] backdrop-blur" data-filters-panel open>
+<div class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] backdrop-blur">
   <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--portal-plum),var(--portal-orange),var(--portal-lime),var(--portal-teal))]"></div>
 
-  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 marker:hidden sm:px-5 transition-colors hover:bg-white/40 lg:cursor-default lg:pointer-events-none">
+  <div class="flex items-center justify-between gap-4 px-4 py-3 sm:px-5">
     <div class="flex flex-wrap items-center gap-2 sm:gap-3">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-(--accent-strong)">Filtros</p>
       <span class="inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_oklab,var(--portal-plum)_30%,var(--line))] bg-[color-mix(in_oklab,var(--portal-plum)_8%,white_92%)] px-2.5 py-0.5 text-xs font-semibold tabular-nums text-(--ink) sm:px-3 sm:py-1 sm:text-sm" data-results-label>{visibleCount} de {totalCount}</span>
     </div>
-    <span class="inline-flex items-center gap-2 text-sm font-medium text-(--ink) lg:hidden">
-      <span class="hidden sm:inline">Buscar</span>
-      <svg class="h-5 w-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </span>
-  </summary>
+  </div>
 
-  <div class="filters-body p-4 pt-3 sm:p-5 sm:pt-4">
+  <div class="p-4 pt-3 sm:p-5 sm:pt-4">
     <div class="mb-4 flex flex-col gap-3 border-b border-(--line) pb-4 md:flex-row md:items-start md:justify-between">
       <div class="space-y-1">
         <h2 class="text-xl text-(--ink) sm:text-2xl">Herramienta de búsqueda</h2>
@@ -86,47 +80,4 @@ const { areas, categories, query, area, category, visibleCount, totalCount } = A
       </button>
     </form>
   </div>
-</details>
-
-<script is:inline>
-  (() => {
-    const panel = document.querySelector('[data-filters-panel]');
-    if (!(panel instanceof HTMLDetailsElement)) return;
-
-    // Mantener siempre abierto en desktop (lg breakpoint = 1024px)
-    const ensureOpenOnDesktop = () => {
-      if (window.innerWidth >= 1024) {
-        panel.open = true;
-      }
-    };
-
-    // Ejecutar al cargar
-    ensureOpenOnDesktop();
-
-    // Ejecutar al redimensionar
-    window.addEventListener('resize', ensureOpenOnDesktop);
-
-    // Animar el chevron cuando se abre/cierra (solo en mobile)
-    const summary = panel.querySelector('summary');
-    const chevron = summary?.querySelector('svg');
-    
-    panel.addEventListener('toggle', () => {
-      if (chevron && window.innerWidth < 1024) {
-        chevron.style.transform = panel.open ? 'rotate(180deg)' : 'rotate(0deg)';
-      }
-    });
-
-    // Prevenir cierre en desktop
-    summary?.addEventListener('click', (e) => {
-      if (window.innerWidth >= 1024) {
-        e.preventDefault();
-      }
-    });
-  })();
-</script>
-
-<style>
-  details[data-filters-panel][open] summary svg {
-    transform: rotate(180deg);
-  }
-</style>
+</div>
