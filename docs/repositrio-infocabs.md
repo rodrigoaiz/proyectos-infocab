@@ -48,7 +48,7 @@ Este repositorio contiene todos los materiales INFOCAB organizados por áreas de
 - [Industria Química](https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/industria-quimica)
 - [Procesos Metabólicos: Obtención y Transformación de la Materia](https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/procesos-metabolicos-obtencion-transformacion-materia)
 
-### General
+### Publicaciones
 
 - [Libro de Texto: Biología 1](https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-texto-biologia-1)
 - [Libro de Texto: Biología 2](https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-de-texto-para-la-asignatura-de-biologia-2)
@@ -84,7 +84,7 @@ Este repositorio contiene todos los materiales INFOCAB organizados por áreas de
 
 - [Caricatura Política](https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/caricatura-politica)
 
-### General
+### Publicaciones
 
 - [Guía de Proyectos con Perspectiva de Género](https://portalacademico.cch.unam.mx/publicaciones-digitales/guia-proyectos-perspectiva-genero)
 

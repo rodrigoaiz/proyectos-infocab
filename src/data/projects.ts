@@ -763,15 +763,15 @@ export const projects: Project[] = [
     "format": "Audio"
   },
   {
-    "id": "historico-social-general-guia-de-proyectos-con-perspectiva-de-genero",
+    "id": "historico-social-publicaciones-guia-de-proyectos-con-perspectiva-de-genero",
     "title": "Guía de Proyectos con Perspectiva de Género",
     "url": "https://portalacademico.cch.unam.mx/publicaciones-digitales/guia-proyectos-perspectiva-genero",
     "description": "Esta guía se presenta como una herramienta fundamental para contribuir a tu formación académica, orientando el desarrollo de tu Proyecto de Investigación hacia una perspectiva de...",
     "area": "Histórico-Social",
-    "category": "General",
+    "category": "Publicaciones",
     "tags": [
       "Histórico-Social",
-      "General",
+      "Publicaciones",
       "Guía",
       "Proyectos",
       "Perspectiva",
@@ -868,15 +868,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "ciencias-experimentales-general-libro-de-texto-biologia-1",
+    "id": "ciencias-experimentales-publicaciones-libro-de-texto-biologia-1",
     "title": "Libro de Texto: Biología 1",
     "url": "https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-texto-biologia-1",
     "description": "En el presente material se cubren todos los aprendizajes de la asignatura de Biología 1 del programa vigente, que se centra en la descripción y funcionamiento a nivel celular.",
     "area": "Ciencias Experimentales",
-    "category": "General",
+    "category": "Publicaciones",
     "tags": [
       "Ciencias Experimentales",
-      "General",
+      "Publicaciones",
       "Libro",
       "Texto",
       "Biología"
@@ -884,15 +884,15 @@ export const projects: Project[] = [
     "fullDescription": "En el presente material se cubren todos los aprendizajes de la asignatura de Biología 1 del programa vigente, que se centra en la descripción y funcionamiento a nivel celular. Se estructura en textos para cada aprendizaje, actividades de aprendizaje que puede ser de Aprendizaje Basado en Problemas o Estudio de caso y actividades de evaluación. El libro es producto de un Proyecto INFOCAB PB201023."
   },
   {
-    "id": "ciencias-experimentales-general-libro-de-texto-biologia-2",
+    "id": "ciencias-experimentales-publicaciones-libro-de-texto-biologia-2",
     "title": "Libro de Texto: Biología 2",
     "url": "https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-de-texto-para-la-asignatura-de-biologia-2",
     "description": "Este libro de texto de Biología 2 está diseñado para cubrir todos los contenidos de las dos unidades del programa de estudios actual.",
     "area": "Ciencias Experimentales",
-    "category": "General",
+    "category": "Publicaciones",
     "tags": [
       "Ciencias Experimentales",
-      "General",
+      "Publicaciones",
       "Libro",
       "Texto",
       "Biología"

@@ -25,7 +25,7 @@ const buildDescription = ({ title, category }) => {
     .replace(/[\u0300-\u036f]/g, '');
 
   // Handle specific categories
-  if (category === 'General') {
+  if (category === 'Publicaciones') {
     return `Publicacion digital del Portal Academico para consulta de ${title.replace(/^Libro de Texto:\s*/i, '').toLowerCase()}.`;
   }
 
