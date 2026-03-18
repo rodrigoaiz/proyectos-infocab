@@ -2,18 +2,95 @@
 // Para SVGs en public/, usamos rutas absolutas sin importarlos
 ---
 
-<nav class="top-0 z-50 border-b border-[#3d2838]" style="background-color: #4f344b;">
+<nav class="header-nav top-0 z-50 border-b border-[#3d2838]" style="background-color: #4f344b;">
   <div class="mx-auto max-w-7xl grid grid-cols-3 items-center px-4 py-4 sm:flex sm:justify-between lg:py-6">
     <div class="logos flex items-center gap-5 justify-start">
-      <a target="_blank" href="https://portalacademico.cch.unam.mx/" aria-label="Portal Académico CCH">
+      <a class="header-logo header-logo-1" target="_blank" href="https://portalacademico.cch.unam.mx/" aria-label="Portal Académico CCH">
         <img src="/logotipo-pacch-bn-2024.svg" alt="Portal Académico CCH" class="h-auto w-20 brightness-0 invert lg:w-28" />
       </a>
-      <a target="_blank" href="https://www.unam.mx/" aria-label="Universidad Nacional Autónoma de México">
+      <a class="header-logo header-logo-2" target="_blank" href="https://www.unam.mx/" aria-label="Universidad Nacional Autónoma de México">
         <img src="/logo-unam.svg" alt="UNAM" class="hidden h-8 w-auto brightness-0 invert md:block lg:h-12" />
       </a>
-      <a target="_blank" href="https://cch.unam.mx/" aria-label="Colegio de Ciencias y Humanidades">
+      <a class="header-logo header-logo-3" target="_blank" href="https://cch.unam.mx/" aria-label="Colegio de Ciencias y Humanidades">
         <img src="/logo-cch.svg" alt="CCH" class="hidden h-8 w-auto brightness-0 invert md:block lg:h-12" />
       </a>
     </div>
   </div>
 </nav>
+
+<style>
+  /* Subtle header entrance animation */
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .header-nav {
+    animation: slide-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+
+  /* Logo staggered entrance */
+  @keyframes fade-in-logo {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .header-logo {
+    animation: fade-in-logo 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    transition: 
+      opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .header-logo-1 {
+    animation-delay: 0.1s;
+  }
+
+  .header-logo-2 {
+    animation-delay: 0.2s;
+  }
+
+  .header-logo-3 {
+    animation-delay: 0.3s;
+  }
+
+  /* Subtle hover effect - professional lift without being playful */
+  .header-logo:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+  }
+
+  .header-logo:active {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .header-nav,
+    .header-logo {
+      animation: none;
+    }
+
+    .header-logo:hover {
+      opacity: 0.85;
+      transform: none;
+    }
+
+    .header-logo:active {
+      opacity: 0.7;
+    }
+  }
+</style>
