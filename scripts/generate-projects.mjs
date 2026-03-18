@@ -29,12 +29,8 @@ const buildDescription = ({ title, category }) => {
     return `Publicacion digital del Portal Academico para consulta de ${title.replace(/^Libro de Texto:\s*/i, '').toLowerCase()}.`;
   }
 
-  if (normalizedCategory.startsWith('Ingles')) {
-    return `Objeto de aprendizaje de ${category} alojado en el Portal Academico para practicar el tema \"${title}\".`;
-  }
-
-  if (category === 'Química') {
-    return `Objeto de aprendizaje del Portal Academico para la asignatura de ${category.toLowerCase()} sobre ${title.toLowerCase()}.`;
+  if (category === 'Objetos de Aprendizaje') {
+    return `Objeto de aprendizaje interactivo del Portal Academico para practicar \"${title}\".`;
   }
 
   const descriptions = {

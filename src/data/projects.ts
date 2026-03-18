@@ -183,15 +183,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-2-can-you-find-the-place",
+    "id": "talleres-objetos-de-aprendizaje-can-you-find-the-place",
     "title": "Can You Find the Place?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/can-you-find-the-place",
     "description": "Con este material aprenderás a hacer preguntas, a utilizar frases de ubicación y vocabulario relacionado con lugares públicos, con lo cual podrás, tanto de forma oral como...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "Find",
       "Place"
     ],
@@ -561,15 +561,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-2-eat-drink-enjoy-life",
+    "id": "talleres-objetos-de-aprendizaje-eat-drink-enjoy-life",
     "title": "Eat, Drink, Enjoy Life",
     "url": "https://portalacademico.cch.unam.mx/ingles2/eat-drink-enjoy-life",
     "description": "Con este material aprenderás a expresar existencia y precio de distintos alimentos y bebidas que se consumen en las diferentes comidas del día, mediante el uso de cuantificadores,...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "Drink",
       "Enjoy",
       "Life"
@@ -617,15 +617,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-2-everyday-vs-now",
+    "id": "talleres-objetos-de-aprendizaje-everyday-vs-now",
     "title": "Everyday vs. Now",
     "url": "https://portalacademico.cch.unam.mx/ingles2/everyday-vs-now",
     "description": "Con este material aprenderás a utilizar palabras, frases y expresiones que te permitirán expresar y preguntar qué es lo que están haciendo otras personas en diferentes contextos y...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "Everyday"
     ],
     "fullDescription": "Con este material aprenderás a utilizar palabras, frases y expresiones que te permitirán expresar y preguntar qué es lo que están haciendo otras personas en diferentes contextos y situaciones de la vida diaria y académica."
@@ -693,15 +693,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-3-finally-i-did-it",
+    "id": "talleres-objetos-de-aprendizaje-finally-i-did-it",
     "title": "Finally, I Did It!",
     "url": "https://portalacademico.cch.unam.mx/ingles3/finally-i-did-it",
     "description": "In this material you will talk about past events by using simple past and sequencers to express the order in which those actions took place.",
     "area": "Talleres",
-    "category": "Inglés 3",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 3",
+      "Objetos de Aprendizaje",
       "Finally"
     ],
     "fullDescription": "In this material you will talk about past events by using simple past and sequencers to express the order in which those actions took place."
@@ -780,15 +780,15 @@ export const projects: Project[] = [
     "fullDescription": "Esta guía se presenta como una herramienta fundamental para contribuir a tu formación académica, orientando el desarrollo de tu Proyecto de Investigación hacia una perspectiva de género integral. Su diseño está estrechamente vinculado a los aprendizajes de la Unidad II de los Programas de Estudio de TLRIID IV (ya sea en su versión 2016 o 2024, según tu generación), asegurando que el proceso de investigación no sea solo un ejercicio técnico, sino una oportunidad para profundizar en cómo las estructuras sociales definen nuestra realidad.\n\nEl propósito central de este material es trascender la metodología tradicional positivista, la cual suele limitarse a la comprobación de respuestas predeterminadas. En su lugar, se propone un diseño de investigación que invite a reflexionar sobre cómo los problemas sociales impactan de manera diferenciada a mujeres y hombres en México y el mundo. A través de este enfoque, se busca que logres diagnosticar y rescatar datos cualitativos de alto valor, los cuales son esenciales para plantear estrategias de intervención efectivas en casos de alta complejidad social.\n\nFinalmente, la guía pretende incentivar tu pensamiento crítico para que logres problematizar, planear y definir proyectos con una visión sensible al género. Al intelectualizar tu capital de conocimiento, estarás en mejores condiciones para identificar problemáticas surgidas de la construcción social genérica. La capacidad que desarrolles para contextualizar estos fenómenos será imprescindible, pues te permitirá manifestar con claridad por qué el problema detectado constituye una situación necesaria de ser investigada y atendida en el contexto actual.\n\nProducto derivado de PROYECTO INFOCAB PB300524"
   },
   {
-    "id": "talleres-ingles-2-how-often-do-you",
+    "id": "talleres-objetos-de-aprendizaje-how-often-do-you",
     "title": "How Often Do You...?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/how-often-do-you",
     "description": "Con este material aprenderás frases y expresiones que te permitirán comunicar y preguntar la frecuencia con que realizas determinadas actividades en diferentes contextos y...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "Often"
     ],
     "fullDescription": "Con este material aprenderás frases y expresiones que te permitirán comunicar y preguntar la frecuencia con que realizas determinadas actividades en diferentes contextos y situaciones de la vida diaria y académica."
@@ -832,15 +832,15 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-4-innovation-in-life-over-the-years",
+    "id": "talleres-objetos-de-aprendizaje-innovation-in-life-over-the-years",
     "title": "Innovation in Life Over the Years",
     "url": "https://portalacademico.cch.unam.mx/ingles4/innovation-in-life-over-the-years",
     "description": "In this material, you will explore various aspects of life by contrasting how they were in the past, how they are in the present, and how they will be in the future.",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "Innovation",
       "Life",
       "Over",
@@ -940,45 +940,45 @@ export const projects: Project[] = [
     "format": "Documento electrónico"
   },
   {
-    "id": "talleres-ingles-3-my-biggest-dream-was",
+    "id": "talleres-objetos-de-aprendizaje-my-biggest-dream-was",
     "title": "My Biggest Dream Was",
     "url": "https://portalacademico.cch.unam.mx/ingles3/my-biggest-dream-was",
     "description": "Along this material, you will learn how to describe people, places and things through different activities such as readings, listening and other exercises in order to establish...",
     "area": "Talleres",
-    "category": "Inglés 3",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 3",
+      "Objetos de Aprendizaje",
       "Biggest",
       "Dream"
     ],
     "fullDescription": "Along this material, you will learn how to describe people, places and things through different activities such as readings, listening and other exercises in order to establish how they were different from the past to nowadays."
   },
   {
-    "id": "talleres-ingles-3-my-home-was-cozy",
+    "id": "talleres-objetos-de-aprendizaje-my-home-was-cozy",
     "title": "My Home Was Cozy",
     "url": "https://portalacademico.cch.unam.mx/ingles3/my-home-was-cozy/",
     "description": "You are going to learn to talk about the existence of people, places, and objects in the past, as well as to make descriptions of them by identifying key words and vocabulary in...",
     "area": "Talleres",
-    "category": "Inglés 3",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 3",
+      "Objetos de Aprendizaje",
       "Home",
       "Cozy"
     ],
     "fullDescription": "You are going to learn to talk about the existence of people, places, and objects in the past, as well as to make descriptions of them by identifying key words and vocabulary in order to share information."
   },
   {
-    "id": "talleres-ingles-4-myths-and-hoaxes",
+    "id": "talleres-objetos-de-aprendizaje-myths-and-hoaxes",
     "title": "Myths and Hoaxes",
     "url": "https://portalacademico.cch.unam.mx/ingles4/myths-and-hoaxes",
     "description": "In this lesson you will read and listen to different stories that were invented by people. You will learn to narrate this type of stories by organizing your ideas with different...",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "Myths",
       "Hoaxes"
     ],
@@ -1089,14 +1089,15 @@ export const projects: Project[] = [
     "format": "Vídeo"
   },
   {
-    "id": "ciencias-experimentales-quimica-quimica-1-reacciones-quimicas-bibliografia",
+    "id": "ciencias-experimentales-objetos-de-aprendizaje-quimica-1-reacciones-quimicas-bibliografia",
     "title": "Química 1 — Reacciones Químicas: Bibliografía",
     "url": "https://e1.portalacademico.cch.unam.mx/alumno/quimica1/unidad1/reaccionesQuimicas/bibliografia",
-    "description": "Objeto de aprendizaje del Portal Academico para la asignatura de química sobre química 1 — reacciones químicas: bibliografía.",
+    "description": "Objeto de aprendizaje interactivo del Portal Academico para practicar \"Química 1 — Reacciones Químicas: Bibliografía\".",
     "area": "Ciencias Experimentales",
-    "category": "Química",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Ciencias Experimentales",
+      "Objetos de Aprendizaje",
       "Química",
       "Reacciones",
       "Químicas",
@@ -1183,15 +1184,15 @@ export const projects: Project[] = [
     "format": "Audio"
   },
   {
-    "id": "talleres-ingles-4-revisiting-the-past-for-a-better-present",
+    "id": "talleres-objetos-de-aprendizaje-revisiting-the-past-for-a-better-present",
     "title": "Revisiting the Past for a Better Present",
     "url": "https://portalacademico.cch.unam.mx/ingles4/revisiting-the-past-for-a-better-present",
     "description": "In this material, you will learn how to talk about current and past situations and to exchange your personal ideas about current and past actions, situations, or events by...",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "Revisiting",
       "Past",
       "Better",
@@ -1200,15 +1201,15 @@ export const projects: Project[] = [
     "fullDescription": "In this material, you will learn how to talk about current and past situations and to exchange your personal ideas about current and past actions, situations, or events by contrasting the present with the past, so that you can share your thoughts about how people, places, and objects were like and how they are now; how they were changing through time and how they are changing and evolving right now."
   },
   {
-    "id": "talleres-ingles-4-striking-historical-facts",
+    "id": "talleres-objetos-de-aprendizaje-striking-historical-facts",
     "title": "Striking Historical Facts",
     "url": "https://portalacademico.cch.unam.mx/ingles4/striking-historical-facts",
     "description": "In this lesson you will learn about different historic moments. You will read and listen to different narrative texts where you will see two different past tenses.",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "Striking",
       "Historical",
       "Facts"
@@ -1216,15 +1217,15 @@ export const projects: Project[] = [
     "fullDescription": "In this lesson you will learn about different historic moments. You will read and listen to different narrative texts where you will see two different past tenses."
   },
   {
-    "id": "talleres-ingles-2-tell-me-about-your-neighborhood",
+    "id": "talleres-objetos-de-aprendizaje-tell-me-about-your-neighborhood",
     "title": "Tell Me About Your Neighborhood",
     "url": "https://portalacademico.cch.unam.mx/ingles2/tell-me-about-your-neighborhood",
     "description": "Con este material podrás señalar la localización de lugares en una comunidad a través del uso de preposiciones, lo que te permitirá solicitar y proporcionar información sobre la...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "Tell",
       "About",
       "Your",
@@ -1233,30 +1234,30 @@ export const projects: Project[] = [
     "fullDescription": "Con este material podrás señalar la localización de lugares en una comunidad a través del uso de preposiciones, lo que te permitirá solicitar y proporcionar información sobre la existencia de algún sitio y su ubicación."
   },
   {
-    "id": "talleres-ingles-3-the-best-day-of-my-life",
+    "id": "talleres-objetos-de-aprendizaje-the-best-day-of-my-life",
     "title": "The Best Day of My Life",
     "url": "https://portalacademico.cch.unam.mx/ingles3/the-best-day-of-my-life",
     "description": "In this material, you are going to exchange information about important events in your life using the past simple and sequencers in order to express actions/events in...",
     "area": "Talleres",
-    "category": "Inglés 3",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 3",
+      "Objetos de Aprendizaje",
       "Best",
       "Life"
     ],
     "fullDescription": "In this material, you are going to exchange information about important events in your life using the past simple and sequencers in order to express actions/events in chronological order."
   },
   {
-    "id": "talleres-ingles-4-the-future-certain-or-unsure",
+    "id": "talleres-objetos-de-aprendizaje-the-future-certain-or-unsure",
     "title": "The Future: Certain or Unsure?",
     "url": "https://portalacademico.cch.unam.mx/ingles4/the-future-certain-or-unsure",
     "description": "In this material you will learn how to distinguish which future form you need to use, depending on what you want to express.",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "Future",
       "Certain",
       "Unsure"
@@ -1264,15 +1265,15 @@ export const projects: Project[] = [
     "fullDescription": "In this material you will learn how to distinguish which future form you need to use, depending on what you want to express. In order to do it, you will review both: “Going to” and “will” so that you know which future form you need to use when expressing plans and which one you need when making predictions."
   },
   {
-    "id": "talleres-ingles-3-this-is-better",
+    "id": "talleres-objetos-de-aprendizaje-this-is-better",
     "title": "This Is Better",
     "url": "https://portalacademico.cch.unam.mx/ingles3/this-is-better",
     "description": "In this material you are going to learn how to make comparisons by talking about the differences between objects, things and places  in order to pinpoint their qualities.",
     "area": "Talleres",
-    "category": "Inglés 3",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 3",
+      "Objetos de Aprendizaje",
       "This",
       "Better"
     ],
@@ -1298,30 +1299,30 @@ export const projects: Project[] = [
     "format": "Audio"
   },
   {
-    "id": "talleres-ingles-2-what-are-you-doing",
+    "id": "talleres-objetos-de-aprendizaje-what-are-you-doing",
     "title": "What Are You Doing?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/what-are-you-doing",
     "description": "Con este material aprenderás a expresar, de manera oral y escrita, situaciones que están sucediendo en este momento utilizando vocabulario y expresiones relacionadas con...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "What",
       "Doing"
     ],
     "fullDescription": "Con este material aprenderás a expresar, de manera oral y escrita, situaciones que están sucediendo en este momento utilizando vocabulario y expresiones relacionadas con actividades cotidianas, clima, medio ambiente y de entretenimiento, así como el presente progresivo en todas sus formas."
   },
   {
-    "id": "talleres-ingles-2-what-do-you-do-in-your-free-time",
+    "id": "talleres-objetos-de-aprendizaje-what-do-you-do-in-your-free-time",
     "title": "What Do You Do in Your Free Time?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/what-do-you-do-in-your-free-time",
     "description": "Con este material aprenderás vocabulario, frases idiomáticas y expresiones de tiempo que serán de utilidad  a la hora de hablar de actividades cotidianas ya sean deportivas, de...",
     "area": "Talleres",
-    "category": "Inglés 2",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 2",
+      "Objetos de Aprendizaje",
       "What",
       "Your",
       "Free",
@@ -1330,15 +1331,15 @@ export const projects: Project[] = [
     "fullDescription": "Con este material aprenderás vocabulario, frases idiomáticas y expresiones de tiempo que serán de utilidad  a la hora de hablar de actividades cotidianas ya sean deportivas, de esparcimiento, familiares y personales; además, podrás  intercambiar información a través de preguntas que te ayuden a indagar acerca de actividades de otras personas."
   },
   {
-    "id": "talleres-ingles-4-what-the-future-holds",
+    "id": "talleres-objetos-de-aprendizaje-what-the-future-holds",
     "title": "What the Future Holds",
     "url": "https://portalacademico.cch.unam.mx/ingles4/what-the-future-holds",
     "description": "In this material, you will read stories and listen to conversations in order to identify future predictions. Besides, you are going to learn how to use Will and Won’t to make...",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "What",
       "Future",
       "Holds"
@@ -1346,15 +1347,15 @@ export const projects: Project[] = [
     "fullDescription": "In this material, you will read stories and listen to conversations in order to identify future predictions. Besides, you are going to learn how to use Will and Won’t to make predictions about the future in various contexts."
   },
   {
-    "id": "talleres-ingles-4-what-s-the-plan",
+    "id": "talleres-objetos-de-aprendizaje-what-s-the-plan",
     "title": "What's the Plan?",
     "url": "https://portalacademico.cch.unam.mx/ingles4/whats-the-plan",
     "description": "In this material you are going to learn how to express your plans. You will study how to use “be going to” to refer to plans and intentions for the future.",
     "area": "Talleres",
-    "category": "Inglés 4",
+    "category": "Objetos de Aprendizaje",
     "tags": [
       "Talleres",
-      "Inglés 4",
+      "Objetos de Aprendizaje",
       "What's",
       "Plan"
     ],
