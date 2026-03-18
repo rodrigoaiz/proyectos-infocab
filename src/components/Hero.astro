@@ -11,35 +11,132 @@ const { total, areas, categories } = Astro.props;
 <section class="relative grid gap-8 overflow-hidden border-b border-(--line) pb-10 sm:gap-10 sm:pb-12 lg:grid-cols-[1.35fr_0.85fr] lg:items-end">
   <div class="pointer-events-none absolute inset-x-0 top-0 h-56"></div>
   <div class="space-y-5 sm:space-y-6">
-    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-(--accent-strong) sm:text-sm sm:tracking-[0.28em]">
+    <p class="hero-eyebrow text-xs font-semibold uppercase tracking-[0.24em] text-(--accent-strong) sm:text-sm sm:tracking-[0.28em]">
       Repositorio de recursos educativos
     </p>
     <div class="space-y-4">
-      <h1 class="max-w-4xl text-balance font-serif text-[2.35rem] leading-[1.15] text-(--ink) sm:text-5xl lg:text-[5.4rem]">
+      <h1 class="hero-title max-w-4xl text-balance font-serif text-[2.35rem] leading-[1.15] text-(--ink) sm:text-5xl lg:text-[5.4rem]">
         Catálogo INFOCAB
       </h1>
-      <p class="max-w-2xl text-balance text-[0.95rem] leading-7 text-(--muted) sm:text-lg">
+      <p class="hero-description max-w-2xl text-balance text-[0.95rem] leading-7 text-(--muted) sm:text-lg">
         Recorre el acervo por área del conocimiento, tipo de recurso o palabra clave. 
       </p>
     </div>
     <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--ink-soft)">
-      <span class="border border-[color-mix(in_oklab,var(--portal-plum)_35%,white_65%)] bg-(--portal-plum-soft) px-3 py-1">Alojados en el Portal Academico</span>
-      <span class="border border-[color-mix(in_oklab,var(--portal-teal)_35%,white_65%)] bg-(--portal-teal-soft) px-3 py-1">Catálogo filtrable</span>
+      <span class="hero-badge hero-badge-1 border border-[color-mix(in_oklab,var(--portal-plum)_35%,white_65%)] bg-(--portal-plum-soft) px-3 py-1">Alojados en el Portal Academico</span>
+      <span class="hero-badge hero-badge-2 border border-[color-mix(in_oklab,var(--portal-teal)_35%,white_65%)] bg-(--portal-teal-soft) px-3 py-1">Catálogo filtrable</span>
     </div>
   </div>
 
   <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-    <article class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_22%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-plum)_9%,white_91%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-plum) before:content-['']">
+    <article class="hero-stat hero-stat-1 relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_22%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-plum)_9%,white_91%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-plum) before:content-['']">
       <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Proyectos</p>
       <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{total}</p>
     </article>
-    <article class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-orange)_28%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-orange) before:content-['']">
+    <article class="hero-stat hero-stat-2 relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-orange)_28%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-orange) before:content-['']">
       <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Áreas</p>
       <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{areas}</p>
     </article>
-    <article class="relative col-span-2 overflow-hidden border border-[color-mix(in_oklab,var(--portal-teal)_24%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-teal)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-teal) before:content-[''] sm:col-span-1">
+    <article class="hero-stat hero-stat-3 relative col-span-2 overflow-hidden border border-[color-mix(in_oklab,var(--portal-teal)_24%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-teal)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-teal) before:content-[''] sm:col-span-1">
       <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Categorias</p>
       <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{categories}</p>
     </article>
   </div>
 </section>
+
+<style>
+  /* Entrance animations with staggered timing */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Subtle scale on badge hover */
+  .hero-badge {
+    animation: fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-badge-1 {
+    animation-delay: 0.4s;
+  }
+
+  .hero-badge-2 {
+    animation-delay: 0.5s;
+  }
+
+  .hero-badge:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Title entrance with subtle slide up */
+  .hero-eyebrow {
+    animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: 0s;
+  }
+
+  .hero-title {
+    animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: 0.1s;
+  }
+
+  .hero-description {
+    animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    animation-delay: 0.25s;
+  }
+
+  /* Stats cards with subtle entrance */
+  .hero-stat {
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .hero-stat-1 {
+    animation-delay: 0.2s;
+  }
+
+  .hero-stat-2 {
+    animation-delay: 0.3s;
+  }
+
+  .hero-stat-3 {
+    animation-delay: 0.4s;
+  }
+
+  .hero-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow,
+    .hero-title,
+    .hero-description,
+    .hero-badge,
+    .hero-stat {
+      animation: none;
+    }
+
+    .hero-badge:hover,
+    .hero-stat:hover {
+      transform: none;
+    }
+  }
+</style>
