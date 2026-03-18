@@ -6,10 +6,12 @@
   --portal-orange: #eb844c;
   --portal-lime: #bbc447;
   --portal-teal: #3fb8b3;
+  --portal-blue: #4a90e2;
   --portal-plum-soft: color-mix(in oklab, var(--portal-plum) 8%, white 92%);
   --portal-orange-soft: color-mix(in oklab, var(--portal-orange) 10%, white 90%);
   --portal-lime-soft: color-mix(in oklab, var(--portal-lime) 12%, white 88%);
   --portal-teal-soft: color-mix(in oklab, var(--portal-teal) 10%, white 90%);
+  --portal-blue-soft: color-mix(in oklab, var(--portal-blue) 10%, white 90%);
   --paper: oklch(0.978 0.018 18);
   --surface: color-mix(in oklab, var(--portal-plum) 4%, white 96%);
   --surface-soft: color-mix(in oklab, var(--portal-orange) 6%, white 94%);

@@ -113,7 +113,7 @@ const stats = getStats(projects);
           if (matches) visible += 1;
         });
 
-        label.textContent = `${visible} de ${cards.length} recursos visibles`;
+        label.textContent = `${visible} de ${cards.length}`;
         emptyState.toggleAttribute('hidden', visible !== 0);
         updateUrl({ q: String(formData.get('q') || ''), area, category });
       };

@@ -9,50 +9,49 @@ const projectsPath = join(__dirname, '..', 'src', 'data', 'projects.ts');
 // Leer el archivo actual
 const content = readFileSync(projectsPath, 'utf-8');
 
-// Definir las áreas del conocimiento CCH
+// Definir las áreas del conocimiento CCH (sin General)
 const AREAS = {
   MATEMATICAS: 'Matemáticas',
   EXPERIMENTALES: 'Ciencias Experimentales',
   HISTORICO_SOCIAL: 'Histórico-Social',
-  LENGUAJE: 'Talleres de Lenguaje y Comunicación',
-  IDIOMAS: 'Talleres de Idiomas',
-  GENERAL: 'General'
+  TALLERES: 'Talleres'
 };
 
 // Función para inferir el área basándose en categoría y título
 function inferirArea(category, title, description) {
   const texto = `${category} ${title} ${description}`.toLowerCase();
   
-  // Talleres de Idiomas (revisar primero la categoría, luego el texto)
+  // Talleres (incluye Idiomas)
   if (category.match(/inglés|ingles|english/i) ||
-      texto.match(/inglés|ingles|english|language|idioma/i)) {
-    return AREAS.IDIOMAS;
+      texto.match(/inglés|ingles|english|language|idioma|modal verbs/i)) {
+    return AREAS.TALLERES;
   }
   
   // Matemáticas (revisar antes que experimentales para capturar trigonometría)
   if (category.match(/matemáticas|matematicas/i) ||
-      texto.match(/matemáticas|matematicas|álgebra|algebra|geometría|geometria|cálculo|calculo|trigonométricas|trigonometricas|trigonometría|trigonometria|ecuaciones|estadística|estadistica|razones/i)) {
+      texto.match(/matemáticas|matematicas|álgebra|algebra|geometría|geometria|cálculo|calculo|trigonométricas|trigonometricas|trigonometría|trigonometria|ecuaciones|estadística|estadistica|razones|números reales|numeros reales|cibernetica|cibernética/i)) {
     return AREAS.MATEMATICAS;
   }
   
   // Ciencias Experimentales
   if (category.match(/química|quimica|física|fisica|biología|biologia|manuales de prácticas/i) ||
-      texto.match(/química|quimica|física|fisica|biología|biologia|experimento|experimental|laboratorio|enzimas|catalizadores|civilización|mesoamericana|monitoreo|aves|mamíferos/i)) {
+      texto.match(/química|quimica|física|fisica|biología|biologia|experimento|experimental|laboratorio|enzimas|catalizadores|metabolicos|metabolismo|gigantismo|aves|mamíferos|industria quimica|reacciones quimicas/i)) {
     return AREAS.EXPERIMENTALES;
   }
   
   // Histórico-Social
-  if (texto.match(/historia|histórico|historico|capitalismo|imperialista|revolución|revolucion|social|política|politica|sociedad|economía|economia|filosofía|filosofia|geografía|geografia|caricatura política/i)) {
+  if (texto.match(/historia|histórico|historico|capitalismo|imperialista|revolución|revolucion|social|política|politica|sociedad|economía|economia|filosofía|filosofia|geografía|geografia|caricatura política|proyectos politicos|estado|globalizacion|globalización|neoliberalismo|mesoamericana|civilización/i)) {
     return AREAS.HISTORICO_SOCIAL;
   }
   
-  // Talleres de Lenguaje y Comunicación
-  if (texto.match(/lectura|escritura|redacción|redaccion|comunicación|comunicacion|literatura|texto|creativa|creadoras|lenguaje/i)) {
-    return AREAS.LENGUAJE;
+  // Talleres (actividades generales, comunicación, tecnología)
+  if (texto.match(/lectura|escritura|redacción|redaccion|comunicación|comunicacion|literatura|texto|creativa|creadoras|lenguaje|kahoot|herramientas tecnologicas|diplomado|radio educativa|produccion|edicion|audio/i)) {
+    return AREAS.TALLERES;
   }
   
-  // Por defecto: General
-  return AREAS.GENERAL;
+  // Por defecto: basarse en la categoría más común
+  console.log(`⚠️  No se pudo clasificar: "${title}" (${category})`);
+  return AREAS.TALLERES;
 }
 
 // Parsear el archivo TypeScript (simple approach)

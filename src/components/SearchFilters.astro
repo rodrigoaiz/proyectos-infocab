@@ -16,9 +16,9 @@ const { areas, categories, query, area, category, visibleCount, totalCount } = A
   <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--portal-plum),var(--portal-orange),var(--portal-lime),var(--portal-teal))]"></div>
 
   <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 marker:hidden sm:px-5 transition-colors hover:bg-white/40">
-    <div class="flex items-center gap-3 sm:gap-4">
+    <div class="flex flex-wrap items-center gap-2 sm:gap-3">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-(--accent-strong)">Filtros</p>
-      <p class="text-sm text-(--muted)" data-results-label>{visibleCount} de {totalCount} recursos</p>
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_oklab,var(--portal-plum)_30%,var(--line))] bg-[color-mix(in_oklab,var(--portal-plum)_8%,white_92%)] px-2.5 py-0.5 text-xs font-semibold tabular-nums text-(--ink) sm:px-3 sm:py-1 sm:text-sm" data-results-label>{visibleCount} de {totalCount}</span>
     </div>
     <span class="inline-flex items-center gap-2 text-sm font-medium text-(--ink)">
       <span class="hidden sm:inline">Buscar</span>

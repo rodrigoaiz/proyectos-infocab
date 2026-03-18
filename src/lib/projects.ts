@@ -55,7 +55,7 @@ export const getStats = (source: Project[]) => ({
 
 export const getAreaTone = (area: string) => {
   switch (area) {
-    case 'Talleres de Idiomas':
+    case 'Matemáticas':
       return {
         accent: 'var(--portal-orange)',
         soft: 'var(--portal-orange-soft)',
@@ -65,20 +65,15 @@ export const getAreaTone = (area: string) => {
         accent: 'var(--portal-teal)',
         soft: 'var(--portal-teal-soft)',
       };
-    case 'Matemáticas':
-      return {
-        accent: 'var(--portal-lime)',
-        soft: 'var(--portal-lime-soft)',
-      };
     case 'Histórico-Social':
+      return {
+        accent: 'var(--portal-blue)',
+        soft: 'var(--portal-blue-soft)',
+      };
+    case 'Talleres':
       return {
         accent: 'var(--portal-plum)',
         soft: 'var(--portal-plum-soft)',
-      };
-    case 'Talleres de Lenguaje y Comunicación':
-      return {
-        accent: '#e74c3c',
-        soft: 'color-mix(in oklab, #e74c3c 10%, white 90%)',
       };
     default:
       return {

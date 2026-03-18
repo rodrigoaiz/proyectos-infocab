@@ -18,20 +18,21 @@ const sentenceCase = (value) => {
   return value.charAt(0).toUpperCase() + value.slice(1);
 };
 
-const buildDescription = ({ title, collection, category }) => {
-  if (collection === 'Publicaciones') {
+const buildDescription = ({ title, category }) => {
+  const normalizedCategory = category
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+  // Handle specific categories
+  if (category === 'General') {
     return `Publicacion digital del Portal Academico para consulta de ${title.replace(/^Libro de Texto:\s*/i, '').toLowerCase()}.`;
   }
 
-  if (collection === 'Objetos de aprendizaje') {
-    const normalizedCategory = category
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
+  if (normalizedCategory.startsWith('Ingles')) {
+    return `Objeto de aprendizaje de ${category} alojado en el Portal Academico para practicar el tema \"${title}\".`;
+  }
 
-    if (normalizedCategory.startsWith('Ingles')) {
-      return `Objeto de aprendizaje de ${category} alojado en el Portal Academico para practicar el tema \"${title}\".`;
-    }
-
+  if (category === 'Química') {
     return `Objeto de aprendizaje del Portal Academico para la asignatura de ${category.toLowerCase()} sobre ${title.toLowerCase()}.`;
   }
 
@@ -45,16 +46,12 @@ const buildDescription = ({ title, collection, category }) => {
     'Actividades creativas': `Actividad creativa del Portal Academico enfocada en ${title.toLowerCase()}.`,
   };
 
-  const normalizedCategory = category
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '');
-
   return descriptions[normalizedCategory] ?? `Recurso academico del Portal Academico sobre ${title.toLowerCase()}.`;
 };
 
-const buildTags = ({ collection, category, title }) => {
+const buildTags = ({ area, category, title }) => {
   const tokens = new Set([
-    collection,
+    area,
     category,
     ...title
       .replace(/[?!:(),.]/g, ' ')
@@ -71,7 +68,7 @@ const buildTags = ({ collection, category, title }) => {
 const source = await readFile(docsPath, 'utf8');
 const lines = source.split(/\r?\n/);
 
-let collection = '';
+let area = '';
 let category = '';
 const projects = [];
 
@@ -79,7 +76,7 @@ for (const line of lines) {
   const trimmed = line.trim();
 
   if (trimmed.startsWith('## ')) {
-    collection = trimmed.slice(3).trim();
+    area = trimmed.slice(3).trim();
     category = '';
     continue;
   }
@@ -97,19 +94,19 @@ for (const line of lines) {
   const normalizedCategory = category || 'General';
 
   projects.push({
-    id: slugify(`${collection}-${normalizedCategory}-${title}`),
+    id: slugify(`${area}-${normalizedCategory}-${title}`),
     title,
     url,
-    description: buildDescription({ title, collection, category: normalizedCategory }),
-    collection,
+    description: buildDescription({ title, category: normalizedCategory }),
+    area,
     category: normalizedCategory,
-    tags: buildTags({ collection, category: normalizedCategory, title }),
+    tags: buildTags({ area, category: normalizedCategory, title }),
   });
 }
 
 projects.sort((left, right) => left.title.localeCompare(right.title, 'es'));
 
-const fileContent = `export type Project = {\n  id: string;\n  title: string;\n  url: string;\n  description: string;\n  collection: string;\n  category: string;\n  tags: string[];\n};\n\nexport const projects: Project[] = ${JSON.stringify(projects, null, 2)};\n`;
+const fileContent = `export type Project = {\n  id: string;\n  title: string;\n  url: string;\n  description: string;\n  area: string;\n  category: string;\n  tags: string[];\n};\n\nexport const projects: Project[] = ${JSON.stringify(projects, null, 2)};\n`;
 
 await mkdir(path.dirname(outputPath.pathname), { recursive: true });
 await writeFile(outputPath, fileContent);
