@@ -1,12 +1,12 @@
 ---
-import { getCollectionTone, type Project } from '../lib/projects';
+import { getAreaTone, type Project } from '../lib/projects';
 
 type Props = {
   project: Project;
 };
 
 const { project } = Astro.props;
-const tone = getCollectionTone(project.collection);
+const tone = getAreaTone(project.area);
 ---
 
 <article
@@ -14,14 +14,14 @@ const tone = getCollectionTone(project.collection);
   data-project-card
   data-title={project.title}
   data-description={project.description}
-  data-collection={project.collection}
+  data-area={project.area}
   data-category={project.category}
   data-tags={project.tags.join('|')}
   style={`--card-accent:${tone.accent};--card-surface:${tone.soft};--card-border:color-mix(in oklab, ${tone.accent} 24%, var(--line));`}
 >
   <div class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-(--card-accent) opacity-85"></div>
   <div class="flex flex-wrap gap-2 text-xs uppercase tracking-[0.18em] text-(--muted)">
-    <span class="border border-(--card-border) bg-(--card-surface) px-2 py-1 text-(--ink)">{project.collection}</span>
+    <span class="border border-(--card-border) bg-(--card-surface) px-2 py-1 text-(--ink)">{project.area}</span>
     <span class="border border-[color-mix(in_oklab,var(--card-accent)_18%,var(--line))] px-2 py-1">{project.category}</span>
   </div>
 

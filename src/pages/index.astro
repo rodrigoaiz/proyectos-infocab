@@ -4,31 +4,31 @@ import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import SearchFilters from '../components/SearchFilters.astro';
 import Layout from '../layouts/Layout.astro';
-import { filterProjects, getCategories, getCollections, getStats, projects } from '../lib/projects';
+import { filterProjects, getAreas, getCategories, getStats, projects } from '../lib/projects';
 
 const query = Astro.url.searchParams.get('q') ?? '';
-const collection = Astro.url.searchParams.get('collection') ?? '';
+const area = Astro.url.searchParams.get('area') ?? '';
 const category = Astro.url.searchParams.get('category') ?? '';
 
-const visibleProjects = filterProjects(projects, { query, collection, category });
+const visibleProjects = filterProjects(projects, { query, area, category });
 const visibleProjectIds = new Set(visibleProjects.map((project) => project.id));
-const collections = getCollections(projects);
+const areas = getAreas(projects);
 const categories = getCategories(projects);
 const stats = getStats(projects);
 ---
 
 <Layout
   title="Repositorio INFOCAB | Catálogo filtrable"
-  description="Explora proyectos INFOCAB del Portal Academico mediante busqueda, categorias y colecciones compartibles por URL."
+  description="Explora proyectos INFOCAB del Portal Academico mediante busqueda, categorias y areas del conocimiento compartibles por URL."
 >
   <main class="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-5 sm:gap-8 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
-    <Hero total={stats.total} collections={stats.collections} categories={stats.categories} />
+    <Hero total={stats.total} areas={stats.areas} categories={stats.categories} />
 
     <SearchFilters
-      collections={collections}
+      areas={areas}
       categories={categories}
       query={query}
-      collection={collection}
+      area={area}
       category={category}
       visibleCount={visibleProjects.length}
       totalCount={projects.length}
@@ -90,23 +90,23 @@ const stats = getStats(projects);
       const render = () => {
         const formData = new FormData(form);
         const query = normalize(String(formData.get('q') || ''));
-        const collection = String(formData.get('collection') || '');
+        const area = String(formData.get('area') || '');
         const category = String(formData.get('category') || '');
 
         let visible = 0;
 
         cards.forEach((card) => {
-          const matchesCollection = !collection || card.dataset.collection === collection;
+          const matchesArea = !area || card.dataset.area === area;
           const matchesCategory = !category || card.dataset.category === category;
           const haystack = normalize([
             card.dataset.title,
             card.dataset.description,
-            card.dataset.collection,
+            card.dataset.area,
             card.dataset.category,
             card.dataset.tags?.replaceAll('|', ' '),
           ].join(' '));
           const matchesQuery = !query || haystack.includes(query);
-          const matches = matchesCollection && matchesCategory && matchesQuery;
+          const matches = matchesArea && matchesCategory && matchesQuery;
           const wrapper = card.parentElement;
 
           wrapper?.toggleAttribute('hidden', !matches);
@@ -115,7 +115,7 @@ const stats = getStats(projects);
 
         label.textContent = `${visible} de ${cards.length} recursos visibles`;
         emptyState.toggleAttribute('hidden', visible !== 0);
-        updateUrl({ q: String(formData.get('q') || ''), collection, category });
+        updateUrl({ q: String(formData.get('q') || ''), area, category });
       };
 
       form.addEventListener('input', render);

@@ -1,11 +1,11 @@
 ---
 type Props = {
   total: number;
-  collections: number;
+  areas: number;
   categories: number;
 };
 
-const { total, collections, categories } = Astro.props;
+const { total, areas, categories } = Astro.props;
 ---
 
 <section class="relative grid gap-8 overflow-hidden border-b border-(--line) pb-10 sm:gap-10 sm:pb-12 lg:grid-cols-[1.35fr_0.85fr] lg:items-end">
@@ -19,7 +19,7 @@ const { total, collections, categories } = Astro.props;
         Catálogo INFOCAB
       </h1>
       <p class="max-w-2xl text-balance text-[0.95rem] leading-7 text-(--muted) sm:text-lg">
-        Recorre el acervo por tipo de recurso, asignatura o palabra clave. 
+        Recorre el acervo por área del conocimiento, tipo de recurso o palabra clave. 
       </p>
     </div>
     <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-(--ink-soft)">
@@ -34,8 +34,8 @@ const { total, collections, categories } = Astro.props;
       <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{total}</p>
     </article>
     <article class="relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-orange)_28%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-orange)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-orange) before:content-['']">
-      <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Colecciones</p>
-      <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{collections}</p>
+      <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Áreas</p>
+      <p class="mt-3 font-serif text-3xl text-(--ink) sm:text-4xl">{areas}</p>
     </article>
     <article class="relative col-span-2 overflow-hidden border border-[color-mix(in_oklab,var(--portal-teal)_24%,var(--line))] bg-[linear-gradient(180deg,color-mix(in_oklab,var(--portal-teal)_11%,white_89%),var(--surface))] p-4 before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-(--portal-teal) before:content-[''] sm:col-span-1">
       <p class="text-xs uppercase tracking-[0.24em] text-(--muted)">Categorias</p>

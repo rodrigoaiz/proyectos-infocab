@@ -3,7 +3,7 @@ export type Project = {
   title: string;
   url: string;
   description: string;
-  collection: string;
+  area: string;
   category: string;
   tags: string[];
 };
@@ -14,7 +14,7 @@ export const projects: Project[] = [
     "title": "Actividad Creativa: Mujeres Creadoras",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/infografias/actividad-creativa-mujeres-creadoras",
     "description": "Infografia educativa del Portal Academico sobre actividad creativa: mujeres creadoras.",
-    "collection": "Recursos de apoyo",
+    "area": "Talleres de Lenguaje y Comunicación",
     "category": "Infografías",
     "tags": [
       "Recursos de apoyo",
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     "title": "Actividad Experimental Caminantes (Presencial)",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/video-educativo/actividad-experimental-caminantes-presencial",
     "description": "Video educativo del Portal Academico sobre actividad experimental caminantes (presencial).",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Videos educativos",
     "tags": [
       "Recursos de apoyo",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     "title": "Actividad Experimental Caminantes: Distancia (Fase 1)",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/video-educativo/actividad-experimental-caminantes-distancia-fase-1",
     "description": "Video educativo del Portal Academico sobre actividad experimental caminantes: distancia (fase 1).",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Videos educativos",
     "tags": [
       "Recursos de apoyo",
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     "title": "Auge del Capitalismo Industrial",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/auge-capitalismo-industrial",
     "description": "Recurso sonoro del Portal Academico centrado en auge del capitalismo industrial.",
-    "collection": "Recursos de apoyo",
+    "area": "Histórico-Social",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     "title": "Can You Find the Place?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/can-you-find-the-place",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"Can You Find the Place?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     "title": "Capitalismo Imperialista 1870–1918",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/capitalismo-imperialista-1870-1918",
     "description": "Recurso sonoro del Portal Academico centrado en capitalismo imperialista 1870–1918.",
-    "collection": "Recursos de apoyo",
+    "area": "Histórico-Social",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     "title": "Caricatura Política",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/caricatura-politica",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema caricatura política.",
-    "collection": "Recursos de apoyo",
+    "area": "Histórico-Social",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     "title": "Cómo Utilizar los Desafíos Kahoot en Clase",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/infografias/como-utilizar-los-desafios-kahoot-en-clase",
     "description": "Infografia educativa del Portal Academico sobre cómo utilizar los desafíos kahoot en clase.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Infografías",
     "tags": [
       "Recursos de apoyo",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     "title": "Comprendiendo Razones Trigonométricas",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/comprendiendo-razones-trigonometricas",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema comprendiendo razones trigonométricas.",
-    "collection": "Recursos de apoyo",
+    "area": "Matemáticas",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -153,7 +153,7 @@ export const projects: Project[] = [
     "title": "Conceptualización Cibernética",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/conceptualizacion-cibernetica",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema conceptualización cibernética.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     "title": "Cuaderno de Trabajo Digital para la Unidad I y II",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/cuaderno-de-trabajo/cuaderno-de-trabajo-digital-para-la-unidad-i-y-ii-de",
     "description": "Cuaderno de trabajo del Portal Academico para apoyar el estudio de cuaderno de trabajo digital para la unidad i y ii.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Cuadernos de trabajo",
     "tags": [
       "Recursos de apoyo",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     "title": "Curso: Técnicas de Monitoreo de Aves y Mamíferos",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/actividades-creativas/curso-tecnicas-monitoreo-aves-mamiferos",
     "description": "Actividad creativa del Portal Academico enfocada en curso: técnicas de monitoreo de aves y mamíferos.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Actividades creativas",
     "tags": [
       "Recursos de apoyo",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     "title": "Determinación de Razones Trigonométricas",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/determinacion-razones-trigonometricas",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema determinación de razones trigonométricas.",
-    "collection": "Recursos de apoyo",
+    "area": "Matemáticas",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -216,7 +216,7 @@ export const projects: Project[] = [
     "title": "Eat, Drink, Enjoy Life",
     "url": "https://portalacademico.cch.unam.mx/ingles2/eat-drink-enjoy-life",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"Eat, Drink, Enjoy Life\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -231,7 +231,7 @@ export const projects: Project[] = [
     "title": "El Desarrollo de la Civilización Mesoamericana",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/video-educativo/el-desarrollo-de-la-civilizacion-mesoamericana-traves-del",
     "description": "Video educativo del Portal Academico sobre el desarrollo de la civilización mesoamericana.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Videos educativos",
     "tags": [
       "Recursos de apoyo",
@@ -246,7 +246,7 @@ export const projects: Project[] = [
     "title": "Enzimas: Catalizadores Biológicos",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/enzimas-catalizadores-biologicos",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema enzimas: catalizadores biológicos.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -261,7 +261,7 @@ export const projects: Project[] = [
     "title": "Everyday vs. Now",
     "url": "https://portalacademico.cch.unam.mx/ingles2/everyday-vs-now",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"Everyday vs. Now\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -274,7 +274,7 @@ export const projects: Project[] = [
     "title": "Evolución de los Medios de Comunicación",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/evolucion-medios-comunicacion",
     "description": "Recurso sonoro del Portal Academico centrado en evolución de los medios de comunicación.",
-    "collection": "Recursos de apoyo",
+    "area": "Talleres de Lenguaje y Comunicación",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -289,7 +289,7 @@ export const projects: Project[] = [
     "title": "Finally, I Did It!",
     "url": "https://portalacademico.cch.unam.mx/ingles3/finally-i-did-it",
     "description": "Objeto de aprendizaje de Inglés 3 alojado en el Portal Academico para practicar el tema \"Finally, I Did It!\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 3",
     "tags": [
       "Objetos de aprendizaje",
@@ -302,7 +302,7 @@ export const projects: Project[] = [
     "title": "Física 3",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/cuaderno-de-trabajo/fisica-3",
     "description": "Cuaderno de trabajo del Portal Academico para apoyar el estudio de física 3.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Cuadernos de trabajo",
     "tags": [
       "Recursos de apoyo",
@@ -315,7 +315,7 @@ export const projects: Project[] = [
     "title": "Gigantismo en Animales",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/gigantismo-en-animales",
     "description": "Recurso sonoro del Portal Academico centrado en gigantismo en animales.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     "title": "Globalización, Neoliberalismo y Crisis del Sistema",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/globalizacion-neoliberalismo-crisis-sistema",
     "description": "Recurso sonoro del Portal Academico centrado en globalización, neoliberalismo y crisis del sistema.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -345,7 +345,7 @@ export const projects: Project[] = [
     "title": "How Often Do You...?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/how-often-do-you",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"How Often Do You...?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -358,7 +358,7 @@ export const projects: Project[] = [
     "title": "Industria Química",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/industria-quimica",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema industria química.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -372,7 +372,7 @@ export const projects: Project[] = [
     "title": "Innovation in Life Over the Years",
     "url": "https://portalacademico.cch.unam.mx/ingles4/innovation-in-life-over-the-years",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"Innovation in Life Over the Years\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -388,7 +388,7 @@ export const projects: Project[] = [
     "title": "Laboratorio Física 4",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/manual-de-practicas/laboratorio-fisica-4",
     "description": "Manual de practicas disponible en el Portal Academico para laboratorio física 4.",
-    "collection": "Recursos de apoyo",
+    "area": "Ciencias Experimentales",
     "category": "Manuales de prácticas",
     "tags": [
       "Recursos de apoyo",
@@ -402,7 +402,7 @@ export const projects: Project[] = [
     "title": "Libro de Texto: Biología 1",
     "url": "https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-texto-biologia-1",
     "description": "Publicacion digital del Portal Academico para consulta de biología 1.",
-    "collection": "Publicaciones",
+    "area": "Ciencias Experimentales",
     "category": "General",
     "tags": [
       "Publicaciones",
@@ -417,7 +417,7 @@ export const projects: Project[] = [
     "title": "Libro de Texto: Biología 2",
     "url": "https://portalacademico.cch.unam.mx/publicaciones-digitales/libro-de-texto-para-la-asignatura-de-biologia-2",
     "description": "Publicacion digital del Portal Academico para consulta de biología 2.",
-    "collection": "Publicaciones",
+    "area": "Ciencias Experimentales",
     "category": "General",
     "tags": [
       "Publicaciones",
@@ -432,7 +432,7 @@ export const projects: Project[] = [
     "title": "Materiales Diplomado Herramientas Tecnológicas",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/manual-de-practicas/materiales-diplomado-herramientas-tecnologicas",
     "description": "Manual de practicas disponible en el Portal Academico para materiales diplomado herramientas tecnológicas.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Manuales de prácticas",
     "tags": [
       "Recursos de apoyo",
@@ -448,7 +448,7 @@ export const projects: Project[] = [
     "title": "Modal Verbs",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/modal-verbs-pozos",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema modal verbs.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -462,7 +462,7 @@ export const projects: Project[] = [
     "title": "My Biggest Dream Was",
     "url": "https://portalacademico.cch.unam.mx/ingles3/my-biggest-dream-was",
     "description": "Objeto de aprendizaje de Inglés 3 alojado en el Portal Academico para practicar el tema \"My Biggest Dream Was\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 3",
     "tags": [
       "Objetos de aprendizaje",
@@ -476,7 +476,7 @@ export const projects: Project[] = [
     "title": "My Home Was Cozy",
     "url": "https://portalacademico.cch.unam.mx/ingles3/my-home-was-cozy/",
     "description": "Objeto de aprendizaje de Inglés 3 alojado en el Portal Academico para practicar el tema \"My Home Was Cozy\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 3",
     "tags": [
       "Objetos de aprendizaje",
@@ -490,7 +490,7 @@ export const projects: Project[] = [
     "title": "Myths and Hoaxes",
     "url": "https://portalacademico.cch.unam.mx/ingles4/myths-and-hoaxes",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"Myths and Hoaxes\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -504,7 +504,7 @@ export const projects: Project[] = [
     "title": "Números Reales",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/numeros-reales",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema números reales.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -518,7 +518,7 @@ export const projects: Project[] = [
     "title": "Procesos Metabólicos: Obtención y Transformación de la Materia",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/estrategia-didactica/procesos-metabolicos-obtencion-transformacion-materia",
     "description": "Estrategia didactica del Portal Academico para trabajar el tema procesos metabólicos: obtención y transformación de la materia.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Estrategias didácticas",
     "tags": [
       "Recursos de apoyo",
@@ -535,7 +535,7 @@ export const projects: Project[] = [
     "title": "Proyectos Políticos y Conflictos en la Formación del Estado",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/video-educativo/proyectos-politicos-y-conflictos-en-la-formacion-del-estado",
     "description": "Video educativo del Portal Academico sobre proyectos políticos y conflictos en la formación del estado.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Videos educativos",
     "tags": [
       "Recursos de apoyo",
@@ -552,7 +552,7 @@ export const projects: Project[] = [
     "title": "Química 1 — Reacciones Químicas: Bibliografía",
     "url": "https://e1.portalacademico.cch.unam.mx/alumno/quimica1/unidad1/reaccionesQuimicas/bibliografia",
     "description": "Objeto de aprendizaje del Portal Academico para la asignatura de química sobre química 1 — reacciones químicas: bibliografía.",
-    "collection": "Objetos de aprendizaje",
+    "area": "Ciencias Experimentales",
     "category": "Química",
     "tags": [
       "Objetos de aprendizaje",
@@ -567,7 +567,7 @@ export const projects: Project[] = [
     "title": "Radio Educativa CCH Azcapotzalco",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/radio-educativa-cch-azcapotzalco",
     "description": "Recurso sonoro del Portal Academico centrado en radio educativa cch azcapotzalco.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -582,7 +582,7 @@ export const projects: Project[] = [
     "title": "Recursos de Producción y Edición de Audio",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/recursos-produccion-edicion-audio",
     "description": "Recurso sonoro del Portal Academico centrado en recursos de producción y edición de audio.",
-    "collection": "Recursos de apoyo",
+    "area": "General",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -598,7 +598,7 @@ export const projects: Project[] = [
     "title": "Revisiting the Past for a Better Present",
     "url": "https://portalacademico.cch.unam.mx/ingles4/revisiting-the-past-for-a-better-present",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"Revisiting the Past for a Better Present\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -614,7 +614,7 @@ export const projects: Project[] = [
     "title": "Striking Historical Facts",
     "url": "https://portalacademico.cch.unam.mx/ingles4/striking-historical-facts",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"Striking Historical Facts\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -629,7 +629,7 @@ export const projects: Project[] = [
     "title": "Tell Me About Your Neighborhood",
     "url": "https://portalacademico.cch.unam.mx/ingles2/tell-me-about-your-neighborhood",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"Tell Me About Your Neighborhood\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -645,7 +645,7 @@ export const projects: Project[] = [
     "title": "The Best Day of My Life",
     "url": "https://portalacademico.cch.unam.mx/ingles3/the-best-day-of-my-life",
     "description": "Objeto de aprendizaje de Inglés 3 alojado en el Portal Academico para practicar el tema \"The Best Day of My Life\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 3",
     "tags": [
       "Objetos de aprendizaje",
@@ -659,7 +659,7 @@ export const projects: Project[] = [
     "title": "The Future: Certain or Unsure?",
     "url": "https://portalacademico.cch.unam.mx/ingles4/the-future-certain-or-unsure",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"The Future: Certain or Unsure?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -674,7 +674,7 @@ export const projects: Project[] = [
     "title": "This Is Better",
     "url": "https://portalacademico.cch.unam.mx/ingles3/this-is-better",
     "description": "Objeto de aprendizaje de Inglés 3 alojado en el Portal Academico para practicar el tema \"This Is Better\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 3",
     "tags": [
       "Objetos de aprendizaje",
@@ -688,7 +688,7 @@ export const projects: Project[] = [
     "title": "Transición a la Sociedad Capitalista",
     "url": "https://portalacademico.cch.unam.mx/recursos-de-apoyo/material-educativo-de-audio/transicion-sociedad-capitalista",
     "description": "Recurso sonoro del Portal Academico centrado en transición a la sociedad capitalista.",
-    "collection": "Recursos de apoyo",
+    "area": "Histórico-Social",
     "category": "Material educativo de audio",
     "tags": [
       "Recursos de apoyo",
@@ -703,7 +703,7 @@ export const projects: Project[] = [
     "title": "What Are You Doing?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/what-are-you-doing",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"What Are You Doing?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -717,7 +717,7 @@ export const projects: Project[] = [
     "title": "What Do You Do in Your Free Time?",
     "url": "https://portalacademico.cch.unam.mx/ingles2/what-do-you-do-in-your-free-time",
     "description": "Objeto de aprendizaje de Inglés 2 alojado en el Portal Academico para practicar el tema \"What Do You Do in Your Free Time?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 2",
     "tags": [
       "Objetos de aprendizaje",
@@ -733,7 +733,7 @@ export const projects: Project[] = [
     "title": "What the Future Holds",
     "url": "https://portalacademico.cch.unam.mx/ingles4/what-the-future-holds",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"What the Future Holds\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",
@@ -748,7 +748,7 @@ export const projects: Project[] = [
     "title": "What's the Plan?",
     "url": "https://portalacademico.cch.unam.mx/ingles4/whats-the-plan",
     "description": "Objeto de aprendizaje de Inglés 4 alojado en el Portal Academico para practicar el tema \"What's the Plan?\".",
-    "collection": "Objetos de aprendizaje",
+    "area": "Talleres de Idiomas",
     "category": "Inglés 4",
     "tags": [
       "Objetos de aprendizaje",

@@ -2,7 +2,7 @@ import { projects, type Project } from '../data/projects';
 
 export type ProjectFilters = {
   query?: string;
-  collection?: string;
+  area?: string;
   category?: string;
 };
 
@@ -17,19 +17,19 @@ export const searchableText = (project: Project) =>
   normalize([
     project.title,
     project.description,
-    project.collection,
+    project.area,
     project.category,
     project.tags.join(' '),
   ].join(' '));
 
 export const filterProjects = (
   source: Project[],
-  { query = '', collection = '', category = '' }: ProjectFilters,
+  { query = '', area = '', category = '' }: ProjectFilters,
 ) => {
   const normalizedQuery = normalize(query);
 
   return source.filter((project) => {
-    if (collection && project.collection !== collection) return false;
+    if (area && project.area !== area) return false;
     if (category && project.category !== category) return false;
     if (!normalizedQuery) return true;
 
@@ -37,8 +37,8 @@ export const filterProjects = (
   });
 };
 
-export const getCollections = (source: Project[]) =>
-  [...new Set(source.map((project) => project.collection))].sort((left, right) =>
+export const getAreas = (source: Project[]) =>
+  [...new Set(source.map((project) => project.area))].sort((left, right) =>
     left.localeCompare(right, 'es'),
   );
 
@@ -49,26 +49,36 @@ export const getCategories = (source: Project[]) =>
 
 export const getStats = (source: Project[]) => ({
   total: source.length,
-  collections: getCollections(source).length,
+  areas: getAreas(source).length,
   categories: getCategories(source).length,
 });
 
-export const getCollectionTone = (collection: string) => {
-  switch (collection) {
-    case 'Recursos de apoyo':
+export const getAreaTone = (area: string) => {
+  switch (area) {
+    case 'Talleres de Idiomas':
       return {
         accent: 'var(--portal-orange)',
         soft: 'var(--portal-orange-soft)',
       };
-    case 'Objetos de aprendizaje':
+    case 'Ciencias Experimentales':
       return {
         accent: 'var(--portal-teal)',
         soft: 'var(--portal-teal-soft)',
       };
-    case 'Publicaciones':
+    case 'Matemáticas':
       return {
         accent: 'var(--portal-lime)',
         soft: 'var(--portal-lime-soft)',
+      };
+    case 'Histórico-Social':
+      return {
+        accent: 'var(--portal-plum)',
+        soft: 'var(--portal-plum-soft)',
+      };
+    case 'Talleres de Lenguaje y Comunicación':
+      return {
+        accent: '#e74c3c',
+        soft: 'color-mix(in oklab, #e74c3c 10%, white 90%)',
       };
     default:
       return {

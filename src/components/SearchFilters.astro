@@ -1,15 +1,15 @@
 ---
 type Props = {
-  collections: string[];
+  areas: string[];
   categories: string[];
   query: string;
-  collection: string;
+  area: string;
   category: string;
   visibleCount: number;
   totalCount: number;
 };
 
-const { collections, categories, query, collection, category, visibleCount, totalCount } = Astro.props;
+const { areas, categories, query, area, category, visibleCount, totalCount } = Astro.props;
 ---
 
 <details class="filters-panel relative overflow-hidden border border-[color-mix(in_oklab,var(--portal-plum)_35%,var(--line))] bg-[linear-gradient(135deg,color-mix(in_oklab,var(--portal-plum)_5%,white_95%),color-mix(in_oklab,var(--portal-teal)_4%,white_96%))] shadow-[0_20px_60px_-48px_color-mix(in_oklab,var(--portal-plum)_35%,black_65%)] backdrop-blur" data-filters-panel open>
@@ -18,7 +18,7 @@ const { collections, categories, query, collection, category, visibleCount, tota
   <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 marker:hidden sm:px-5 transition-colors hover:bg-white/40">
     <div class="flex items-center gap-3 sm:gap-4">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-(--accent-strong)">Filtros</p>
-      <p class="text-sm text-(--muted)">{visibleCount} de {totalCount} recursos</p>
+      <p class="text-sm text-(--muted)" data-results-label>{visibleCount} de {totalCount} recursos</p>
     </div>
     <span class="inline-flex items-center gap-2 text-sm font-medium text-(--ink)">
       <span class="hidden sm:inline">Buscar</span>
@@ -52,14 +52,14 @@ const { collections, categories, query, collection, category, visibleCount, tota
       </label>
 
       <label class="grid gap-2">
-        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">Coleccion</span>
+        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-(--muted)">Área del conocimiento</span>
         <select
           class="min-h-12 border border-[color-mix(in_oklab,var(--portal-orange)_26%,var(--line))] bg-[color-mix(in_oklab,var(--portal-orange)_4%,white_96%)] px-4 text-base text-(--ink) outline-none transition focus:border-(--portal-orange) focus:ring-2 focus:ring-[color-mix(in_oklab,var(--portal-orange)_24%,white_76%)]"
-          name="collection"
+          name="area"
         >
           <option value="">Todas</option>
-          {collections.map((item) => (
-            <option value={item} selected={item === collection}>{item}</option>
+          {areas.map((item) => (
+            <option value={item} selected={item === area}>{item}</option>
           ))}
         </select>
       </label>
@@ -102,23 +102,6 @@ const { collections, categories, query, collection, category, visibleCount, tota
         chevron.style.transform = panel.open ? 'rotate(180deg)' : 'rotate(0deg)';
       }
     });
-
-    // Auto-cerrar después de aplicar filtros (cuando cambian los inputs)
-    const form = panel.querySelector('[data-filters]');
-    if (form) {
-      const inputs = form.querySelectorAll('input, select');
-      
-      inputs.forEach(input => {
-        input.addEventListener('change', () => {
-          // Esperar un poco antes de cerrar para que se vea el cambio
-          setTimeout(() => {
-            if (window.innerWidth >= 1024) {
-              panel.open = false;
-            }
-          }, 300);
-        });
-      });
-    }
   })();
 </script>
 
