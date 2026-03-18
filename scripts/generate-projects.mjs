@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { scrapePortalURL, createSummary, delay } from './scraper.mjs';
 
 const rootDir = new URL('..', import.meta.url);
 const docsPath = new URL('../docs/repositrio-infocabs.md', import.meta.url);
@@ -106,7 +107,64 @@ for (const line of lines) {
 
 projects.sort((left, right) => left.title.localeCompare(right.title, 'es'));
 
-const fileContent = `export type Project = {\n  id: string;\n  title: string;\n  url: string;\n  description: string;\n  area: string;\n  category: string;\n  tags: string[];\n};\n\nexport const projects: Project[] = ${JSON.stringify(projects, null, 2)};\n`;
+console.log(`\n📥 Enriching ${projects.length} projects with scraped data...`);
+console.log('This may take a few minutes. Please wait...\n');
+
+let enrichedCount = 0;
+for (let i = 0; i < projects.length; i++) {
+  const project = projects[i];
+  console.log(`[${i + 1}/${projects.length}] ${project.title}`);
+  
+  const enrichedData = await scrapePortalURL(project.url);
+  
+  if (enrichedData.fullDescription) {
+    project.fullDescription = enrichedData.fullDescription;
+    // Si hay descripción completa, crear un resumen para la descripción corta
+    project.description = createSummary(enrichedData.fullDescription, 180);
+    enrichedCount++;
+  }
+  
+  if (enrichedData.authors) {
+    project.authors = enrichedData.authors;
+  }
+  
+  if (enrichedData.year) {
+    project.year = enrichedData.year;
+  }
+  
+  if (enrichedData.subject) {
+    project.subject = enrichedData.subject;
+  }
+  
+  if (enrichedData.format) {
+    project.format = enrichedData.format;
+  }
+  
+  // Delay entre requests para no sobrecargar el servidor
+  if (i < projects.length - 1) {
+    await delay(500); // 500ms entre cada request
+  }
+}
+
+console.log(`\n✅ Enriched ${enrichedCount} projects with full descriptions\n`);
+
+const fileContent = `export type Project = {
+  id: string;
+  title: string;
+  url: string;
+  description: string;
+  area: string;
+  category: string;
+  tags: string[];
+  fullDescription?: string;
+  authors?: string;
+  year?: number;
+  subject?: string;
+  format?: string;
+};
+
+export const projects: Project[] = ${JSON.stringify(projects, null, 2)};
+`;
 
 await mkdir(path.dirname(outputPath.pathname), { recursive: true });
 await writeFile(outputPath, fileContent);

@@ -1,5 +1,6 @@
 ---
 import { getAreaTone, type Project } from '../lib/projects';
+import ProjectModal from './ProjectModal.astro';
 
 type Props = {
   project: Project;
@@ -7,6 +8,7 @@ type Props = {
 
 const { project } = Astro.props;
 const tone = getAreaTone(project.area);
+const hasFullDescription = Boolean(project.fullDescription);
 ---
 
 <article
@@ -33,6 +35,16 @@ const tone = getAreaTone(project.area);
   </div>
 
   <div class="mt-auto flex items-center justify-end border-t border-(--line) pt-4">
+    {hasFullDescription && (
+      <button
+        class="inline-flex items-center gap-2 text-sm font-medium text-(--card-accent) underline decoration-[color-mix(in_oklab,var(--card-accent)_45%,transparent)] underline-offset-4 transition hover:text-(--ink) mr-4"
+        data-open-modal={project.id}
+        aria-label={`Ver descripción completa de ${project.title}`}
+      >
+        Ver más
+        <span aria-hidden="true">+</span>
+      </button>
+    )}
     <a
       class="inline-flex items-center gap-2 text-sm font-medium text-(--card-accent) underline decoration-[color-mix(in_oklab,var(--card-accent)_45%,transparent)] underline-offset-4 transition hover:text-(--ink)"
       href={project.url}
@@ -45,3 +57,5 @@ const tone = getAreaTone(project.area);
     </a>
   </div>
 </article>
+
+{hasFullDescription && <ProjectModal project={project} />}
