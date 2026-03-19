@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate:data": "node scripts/generate-projects.mjs"
+    "generate:data": "node scripts/generate-projects.mjs",
+    "build:prod": "BASE_PATH=/infocab npm run build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
